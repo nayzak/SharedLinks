@@ -14,6 +14,15 @@
 		F5E3BC691F29E6A5007E5AD6 /* SwifterMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */; };
 		F5E3BC6A1F29E6A5007E5AD6 /* SwifterMac.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F5E3BC711F29E747007E5AD6 /* SwifterMac.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5E3BC701F29E747007E5AD6 /* SwifterMac.framework.dSYM */; };
+		F5E3BC751F29ED3C007E5AD6 /* Bond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC721F29ED3C007E5AD6 /* Bond.framework */; };
+		F5E3BC761F29ED3C007E5AD6 /* Bond.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC721F29ED3C007E5AD6 /* Bond.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F5E3BC771F29ED3C007E5AD6 /* Diff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC731F29ED3C007E5AD6 /* Diff.framework */; };
+		F5E3BC781F29ED3C007E5AD6 /* Diff.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC731F29ED3C007E5AD6 /* Diff.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F5E3BC791F29ED3C007E5AD6 /* ReactiveKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC741F29ED3C007E5AD6 /* ReactiveKit.framework */; };
+		F5E3BC7A1F29ED3C007E5AD6 /* ReactiveKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC741F29ED3C007E5AD6 /* ReactiveKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F5E3BC7E1F29ED53007E5AD6 /* Bond.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5E3BC7B1F29ED53007E5AD6 /* Bond.framework.dSYM */; };
+		F5E3BC7F1F29ED53007E5AD6 /* Diff.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5E3BC7C1F29ED53007E5AD6 /* Diff.framework.dSYM */; };
+		F5E3BC801F29ED53007E5AD6 /* ReactiveKit.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5E3BC7D1F29ED53007E5AD6 /* ReactiveKit.framework.dSYM */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,7 +32,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				F5E3BC7A1F29ED3C007E5AD6 /* ReactiveKit.framework in Embed Frameworks */,
 				F5E3BC6A1F29E6A5007E5AD6 /* SwifterMac.framework in Embed Frameworks */,
+				F5E3BC781F29ED3C007E5AD6 /* Diff.framework in Embed Frameworks */,
+				F5E3BC761F29ED3C007E5AD6 /* Bond.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -35,6 +47,9 @@
 			dstSubfolderSpec = 16;
 			files = (
 				F5E3BC711F29E747007E5AD6 /* SwifterMac.framework.dSYM in CopyFiles */,
+				F5E3BC7E1F29ED53007E5AD6 /* Bond.framework.dSYM in CopyFiles */,
+				F5E3BC7F1F29ED53007E5AD6 /* Diff.framework.dSYM in CopyFiles */,
+				F5E3BC801F29ED53007E5AD6 /* ReactiveKit.framework.dSYM in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,6 +64,12 @@
 		F51601481F29CFE900555876 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwifterMac.framework; path = Carthage/Build/Mac/SwifterMac.framework; sourceTree = "<group>"; };
 		F5E3BC701F29E747007E5AD6 /* SwifterMac.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwifterMac.framework.dSYM; path = Carthage/Build/Mac/SwifterMac.framework.dSYM; sourceTree = "<group>"; };
+		F5E3BC721F29ED3C007E5AD6 /* Bond.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bond.framework; path = Carthage/Build/Mac/Bond.framework; sourceTree = "<group>"; };
+		F5E3BC731F29ED3C007E5AD6 /* Diff.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Diff.framework; path = Carthage/Build/Mac/Diff.framework; sourceTree = "<group>"; };
+		F5E3BC741F29ED3C007E5AD6 /* ReactiveKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveKit.framework; path = Carthage/Build/Mac/ReactiveKit.framework; sourceTree = "<group>"; };
+		F5E3BC7B1F29ED53007E5AD6 /* Bond.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Bond.framework.dSYM; path = Carthage/Build/Mac/Bond.framework.dSYM; sourceTree = "<group>"; };
+		F5E3BC7C1F29ED53007E5AD6 /* Diff.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Diff.framework.dSYM; path = Carthage/Build/Mac/Diff.framework.dSYM; sourceTree = "<group>"; };
+		F5E3BC7D1F29ED53007E5AD6 /* ReactiveKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ReactiveKit.framework.dSYM; path = Carthage/Build/Mac/ReactiveKit.framework.dSYM; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +77,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5E3BC791F29ED3C007E5AD6 /* ReactiveKit.framework in Frameworks */,
 				F5E3BC691F29E6A5007E5AD6 /* SwifterMac.framework in Frameworks */,
+				F5E3BC771F29ED3C007E5AD6 /* Diff.framework in Frameworks */,
+				F5E3BC751F29ED3C007E5AD6 /* Bond.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,8 +119,14 @@
 		F5E3BC621F29E4D1007E5AD6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F5E3BC721F29ED3C007E5AD6 /* Bond.framework */,
+				F5E3BC731F29ED3C007E5AD6 /* Diff.framework */,
+				F5E3BC741F29ED3C007E5AD6 /* ReactiveKit.framework */,
 				F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */,
 				F5E3BC701F29E747007E5AD6 /* SwifterMac.framework.dSYM */,
+				F5E3BC7B1F29ED53007E5AD6 /* Bond.framework.dSYM */,
+				F5E3BC7C1F29ED53007E5AD6 /* Diff.framework.dSYM */,
+				F5E3BC7D1F29ED53007E5AD6 /* ReactiveKit.framework.dSYM */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
