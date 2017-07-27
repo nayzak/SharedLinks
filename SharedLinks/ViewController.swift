@@ -7,21 +7,29 @@
 //
 
 import Cocoa
+import Accounts
+import SwifterMac
 
 class ViewController: NSViewController {
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
+  override func viewDidAppear() {
+    super.viewDidAppear()
 
-    // Do any additional setup after loading the view.
-  }
-
-  override var representedObject: Any? {
-    didSet {
-    // Update the view, if already loaded.
+    let store = ACAccountStore()
+    let twitterAccountType = store.accountType(withAccountTypeIdentifier: ACAccountTypeIdentifierTwitter)
+    store.requestAccessToAccounts(with: twitterAccountType, options: nil) { granted, error in
+      if (granted) {
+        let twitterAccounts = store.accounts(with: twitterAccountType) as? [ACAccount]
+        if let account = twitterAccounts?.first {
+          let swifter = Swifter(account: account)
+          swifter.getHomeTimeline(success: { json in
+            print(json)
+          }, failure: { error in
+            print(error)
+          })
+        }
+      }
     }
   }
-
-
+  
 }
-
