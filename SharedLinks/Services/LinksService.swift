@@ -12,9 +12,17 @@ import ReactiveKit
 class LinksService {
 
   let links: SafeSignal<[Link]>
+  
+  private let twitterDataSource = TwitterDataSource()
 
   init() {
-    self.links = .just([])
+
+    let links = Property<[Link]>([])
+    twitterDataSource.homeTimeline()
+      .recover(with: [])
+      .bind(to: links)
+    
+    self.links = links.toSignal()
   }
 
 }

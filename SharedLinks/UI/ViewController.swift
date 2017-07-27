@@ -9,27 +9,16 @@
 import Cocoa
 import Accounts
 import SwifterMac
+import Bond
 
 class ViewController: NSViewController {
 
+  private let service = LinksService()
+  
   override func viewDidAppear() {
     super.viewDidAppear()
 
-    let store = ACAccountStore()
-    let twitterAccountType = store.accountType(withAccountTypeIdentifier: ACAccountTypeIdentifierTwitter)
-    store.requestAccessToAccounts(with: twitterAccountType, options: nil) { granted, error in
-      if (granted) {
-        let twitterAccounts = store.accounts(with: twitterAccountType) as? [ACAccount]
-        if let account = twitterAccounts?.first {
-          let swifter = Swifter(account: account)
-          swifter.getHomeTimeline(success: { json in
-            print(json)
-          }, failure: { error in
-            print(error)
-          })
-        }
-      }
-    }
+    service.links.bind(to: self) { vc, links in print(links) }
   }
-  
+
 }
