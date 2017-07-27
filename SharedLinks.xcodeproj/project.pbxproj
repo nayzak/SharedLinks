@@ -11,8 +11,34 @@
 		F51601421F29CFE900555876 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51601411F29CFE900555876 /* ViewController.swift */; };
 		F51601441F29CFE900555876 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F51601431F29CFE900555876 /* Assets.xcassets */; };
 		F51601471F29CFE900555876 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F51601451F29CFE900555876 /* Main.storyboard */; };
-		F5E3BC641F29E4D1007E5AD6 /* SwifterMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */; };
+		F5E3BC691F29E6A5007E5AD6 /* SwifterMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */; };
+		F5E3BC6A1F29E6A5007E5AD6 /* SwifterMac.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F5E3BC711F29E747007E5AD6 /* SwifterMac.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5E3BC701F29E747007E5AD6 /* SwifterMac.framework.dSYM */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F5E3BC681F29E686007E5AD6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F5E3BC6A1F29E6A5007E5AD6 /* SwifterMac.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5E3BC6B1F29E6CA007E5AD6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				F5E3BC711F29E747007E5AD6 /* SwifterMac.framework.dSYM in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F516013C1F29CFE900555876 /* SharedLinks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharedLinks.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,6 +48,7 @@
 		F51601461F29CFE900555876 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F51601481F29CFE900555876 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwifterMac.framework; path = Carthage/Build/Mac/SwifterMac.framework; sourceTree = "<group>"; };
+		F5E3BC701F29E747007E5AD6 /* SwifterMac.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwifterMac.framework.dSYM; path = Carthage/Build/Mac/SwifterMac.framework.dSYM; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,7 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5E3BC641F29E4D1007E5AD6 /* SwifterMac.framework in Frameworks */,
+				F5E3BC691F29E6A5007E5AD6 /* SwifterMac.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */,
+				F5E3BC701F29E747007E5AD6 /* SwifterMac.framework.dSYM */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -83,6 +111,8 @@
 				F51601381F29CFE900555876 /* Sources */,
 				F51601391F29CFE900555876 /* Frameworks */,
 				F516013A1F29CFE900555876 /* Resources */,
+				F5E3BC681F29E686007E5AD6 /* Embed Frameworks */,
+				F5E3BC6B1F29E6CA007E5AD6 /* CopyFiles */,
 			);
 			buildRules = (
 			);
