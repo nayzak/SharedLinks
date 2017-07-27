@@ -7,19 +7,78 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F51601401F29CFE900555876 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F516013F1F29CFE900555876 /* AppDelegate.swift */; };
-		F51601421F29CFE900555876 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51601411F29CFE900555876 /* ViewController.swift */; };
-		F51601441F29CFE900555876 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F51601431F29CFE900555876 /* Assets.xcassets */; };
-		F51601471F29CFE900555876 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F51601451F29CFE900555876 /* Main.storyboard */; };
+		F52955D91F29FD6E00CFAF30 /* Swifter+ReactiveKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52955D81F29FD6E00CFAF30 /* Swifter+ReactiveKit.swift */; };
+		F5E3BC691F29E6A5007E5AD6 /* SwifterMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */; };
+		F5E3BC6A1F29E6A5007E5AD6 /* SwifterMac.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F5E3BC711F29E747007E5AD6 /* SwifterMac.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5E3BC701F29E747007E5AD6 /* SwifterMac.framework.dSYM */; };
+		F5E3BC751F29ED3C007E5AD6 /* Bond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC721F29ED3C007E5AD6 /* Bond.framework */; };
+		F5E3BC761F29ED3C007E5AD6 /* Bond.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC721F29ED3C007E5AD6 /* Bond.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F5E3BC771F29ED3C007E5AD6 /* Diff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC731F29ED3C007E5AD6 /* Diff.framework */; };
+		F5E3BC781F29ED3C007E5AD6 /* Diff.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC731F29ED3C007E5AD6 /* Diff.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F5E3BC791F29ED3C007E5AD6 /* ReactiveKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC741F29ED3C007E5AD6 /* ReactiveKit.framework */; };
+		F5E3BC7A1F29ED3C007E5AD6 /* ReactiveKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC741F29ED3C007E5AD6 /* ReactiveKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F5E3BC7E1F29ED53007E5AD6 /* Bond.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5E3BC7B1F29ED53007E5AD6 /* Bond.framework.dSYM */; };
+		F5E3BC7F1F29ED53007E5AD6 /* Diff.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5E3BC7C1F29ED53007E5AD6 /* Diff.framework.dSYM */; };
+		F5E3BC801F29ED53007E5AD6 /* ReactiveKit.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5E3BC7D1F29ED53007E5AD6 /* ReactiveKit.framework.dSYM */; };
+		F5E3BC851F29EE1B007E5AD6 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E3BC841F29EE1B007E5AD6 /* Link.swift */; };
+		F5E3BC871F29EEDD007E5AD6 /* LinksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E3BC861F29EEDD007E5AD6 /* LinksService.swift */; };
+		F5E3BC931F29F362007E5AD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5E3BC8C1F29F362007E5AD6 /* Assets.xcassets */; };
+		F5E3BC941F29F362007E5AD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E3BC8E1F29F362007E5AD6 /* AppDelegate.swift */; };
+		F5E3BC961F29F362007E5AD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5E3BC911F29F362007E5AD6 /* Main.storyboard */; };
+		F5E3BC971F29F362007E5AD6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E3BC921F29F362007E5AD6 /* ViewController.swift */; };
+		F5E3BC9D1F29F54D007E5AD6 /* TwitterDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E3BC9C1F29F54D007E5AD6 /* TwitterDataSource.swift */; };
+		F5E3BC9F1F29F562007E5AD6 /* Link+Twitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E3BC9E1F29F562007E5AD6 /* Link+Twitter.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F5E3BC681F29E686007E5AD6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F5E3BC7A1F29ED3C007E5AD6 /* ReactiveKit.framework in Embed Frameworks */,
+				F5E3BC6A1F29E6A5007E5AD6 /* SwifterMac.framework in Embed Frameworks */,
+				F5E3BC781F29ED3C007E5AD6 /* Diff.framework in Embed Frameworks */,
+				F5E3BC761F29ED3C007E5AD6 /* Bond.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5E3BC6B1F29E6CA007E5AD6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				F5E3BC711F29E747007E5AD6 /* SwifterMac.framework.dSYM in CopyFiles */,
+				F5E3BC7E1F29ED53007E5AD6 /* Bond.framework.dSYM in CopyFiles */,
+				F5E3BC7F1F29ED53007E5AD6 /* Diff.framework.dSYM in CopyFiles */,
+				F5E3BC801F29ED53007E5AD6 /* ReactiveKit.framework.dSYM in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F516013C1F29CFE900555876 /* SharedLinks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharedLinks.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F516013F1F29CFE900555876 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F51601411F29CFE900555876 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F51601431F29CFE900555876 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F51601461F29CFE900555876 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F51601481F29CFE900555876 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F52955D81F29FD6E00CFAF30 /* Swifter+ReactiveKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Swifter+ReactiveKit.swift"; sourceTree = "<group>"; };
+		F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwifterMac.framework; path = Carthage/Build/Mac/SwifterMac.framework; sourceTree = "<group>"; };
+		F5E3BC701F29E747007E5AD6 /* SwifterMac.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwifterMac.framework.dSYM; path = Carthage/Build/Mac/SwifterMac.framework.dSYM; sourceTree = "<group>"; };
+		F5E3BC721F29ED3C007E5AD6 /* Bond.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bond.framework; path = Carthage/Build/Mac/Bond.framework; sourceTree = "<group>"; };
+		F5E3BC731F29ED3C007E5AD6 /* Diff.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Diff.framework; path = Carthage/Build/Mac/Diff.framework; sourceTree = "<group>"; };
+		F5E3BC741F29ED3C007E5AD6 /* ReactiveKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveKit.framework; path = Carthage/Build/Mac/ReactiveKit.framework; sourceTree = "<group>"; };
+		F5E3BC7B1F29ED53007E5AD6 /* Bond.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Bond.framework.dSYM; path = Carthage/Build/Mac/Bond.framework.dSYM; sourceTree = "<group>"; };
+		F5E3BC7C1F29ED53007E5AD6 /* Diff.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Diff.framework.dSYM; path = Carthage/Build/Mac/Diff.framework.dSYM; sourceTree = "<group>"; };
+		F5E3BC7D1F29ED53007E5AD6 /* ReactiveKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ReactiveKit.framework.dSYM; path = Carthage/Build/Mac/ReactiveKit.framework.dSYM; sourceTree = "<group>"; };
+		F5E3BC841F29EE1B007E5AD6 /* Link.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
+		F5E3BC861F29EEDD007E5AD6 /* LinksService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinksService.swift; sourceTree = "<group>"; };
+		F5E3BC8C1F29F362007E5AD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F5E3BC8E1F29F362007E5AD6 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F5E3BC911F29F362007E5AD6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F5E3BC921F29F362007E5AD6 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F5E3BC9C1F29F54D007E5AD6 /* TwitterDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterDataSource.swift; sourceTree = "<group>"; };
+		F5E3BC9E1F29F562007E5AD6 /* Link+Twitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Link+Twitter.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +86,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5E3BC791F29ED3C007E5AD6 /* ReactiveKit.framework in Frameworks */,
+				F5E3BC691F29E6A5007E5AD6 /* SwifterMac.framework in Frameworks */,
+				F5E3BC771F29ED3C007E5AD6 /* Diff.framework in Frameworks */,
+				F5E3BC751F29ED3C007E5AD6 /* Bond.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +101,7 @@
 			children = (
 				F516013E1F29CFE900555876 /* SharedLinks */,
 				F516013D1F29CFE900555876 /* Products */,
+				F5E3BC621F29E4D1007E5AD6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,13 +116,88 @@
 		F516013E1F29CFE900555876 /* SharedLinks */ = {
 			isa = PBXGroup;
 			children = (
-				F516013F1F29CFE900555876 /* AppDelegate.swift */,
-				F51601411F29CFE900555876 /* ViewController.swift */,
-				F51601431F29CFE900555876 /* Assets.xcassets */,
-				F51601451F29CFE900555876 /* Main.storyboard */,
-				F51601481F29CFE900555876 /* Info.plist */,
+				F5E3BC8D1F29F362007E5AD6 /* SupportingFiles */,
+				F5E3BC831F29EDE4007E5AD6 /* Entities */,
+				F5E3BC821F29EDD0007E5AD6 /* Services */,
+				F5E3BC981F29F4E6007E5AD6 /* DataSources */,
+				F5E3BC8B1F29F362007E5AD6 /* Resources */,
+				F5E3BC901F29F362007E5AD6 /* UI */,
 			);
 			path = SharedLinks;
+			sourceTree = "<group>";
+		};
+		F5E3BC621F29E4D1007E5AD6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F5E3BC721F29ED3C007E5AD6 /* Bond.framework */,
+				F5E3BC731F29ED3C007E5AD6 /* Diff.framework */,
+				F5E3BC741F29ED3C007E5AD6 /* ReactiveKit.framework */,
+				F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */,
+				F5E3BC701F29E747007E5AD6 /* SwifterMac.framework.dSYM */,
+				F5E3BC7B1F29ED53007E5AD6 /* Bond.framework.dSYM */,
+				F5E3BC7C1F29ED53007E5AD6 /* Diff.framework.dSYM */,
+				F5E3BC7D1F29ED53007E5AD6 /* ReactiveKit.framework.dSYM */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F5E3BC821F29EDD0007E5AD6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F5E3BC861F29EEDD007E5AD6 /* LinksService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F5E3BC831F29EDE4007E5AD6 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				F5E3BC841F29EE1B007E5AD6 /* Link.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		F5E3BC8B1F29F362007E5AD6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F5E3BC8C1F29F362007E5AD6 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F5E3BC8D1F29F362007E5AD6 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				F5E3BC8E1F29F362007E5AD6 /* AppDelegate.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		F5E3BC901F29F362007E5AD6 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F5E3BC911F29F362007E5AD6 /* Main.storyboard */,
+				F5E3BC921F29F362007E5AD6 /* ViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		F5E3BC981F29F4E6007E5AD6 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				F5E3BC9B1F29F52E007E5AD6 /* Twitter */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		F5E3BC9B1F29F52E007E5AD6 /* Twitter */ = {
+			isa = PBXGroup;
+			children = (
+				F5E3BC9C1F29F54D007E5AD6 /* TwitterDataSource.swift */,
+				F5E3BC9E1F29F562007E5AD6 /* Link+Twitter.swift */,
+				F52955D81F29FD6E00CFAF30 /* Swifter+ReactiveKit.swift */,
+			);
+			path = Twitter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,6 +210,8 @@
 				F51601381F29CFE900555876 /* Sources */,
 				F51601391F29CFE900555876 /* Frameworks */,
 				F516013A1F29CFE900555876 /* Resources */,
+				F5E3BC681F29E686007E5AD6 /* Embed Frameworks */,
+				F5E3BC6B1F29E6CA007E5AD6 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -120,8 +261,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F51601441F29CFE900555876 /* Assets.xcassets in Resources */,
-				F51601471F29CFE900555876 /* Main.storyboard in Resources */,
+				F5E3BC961F29F362007E5AD6 /* Main.storyboard in Resources */,
+				F5E3BC931F29F362007E5AD6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,23 +273,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F51601421F29CFE900555876 /* ViewController.swift in Sources */,
-				F51601401F29CFE900555876 /* AppDelegate.swift in Sources */,
+				F5E3BC941F29F362007E5AD6 /* AppDelegate.swift in Sources */,
+				F5E3BC9F1F29F562007E5AD6 /* Link+Twitter.swift in Sources */,
+				F52955D91F29FD6E00CFAF30 /* Swifter+ReactiveKit.swift in Sources */,
+				F5E3BC851F29EE1B007E5AD6 /* Link.swift in Sources */,
+				F5E3BC9D1F29F54D007E5AD6 /* TwitterDataSource.swift in Sources */,
+				F5E3BC971F29F362007E5AD6 /* ViewController.swift in Sources */,
+				F5E3BC871F29EEDD007E5AD6 /* LinksService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		F51601451F29CFE900555876 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F51601461F29CFE900555876 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F51601491F29CFE900555876 /* Debug */ = {
@@ -248,7 +383,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = SharedLinks/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = SharedLinks/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nayzak.SharedLinks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -261,7 +400,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = SharedLinks/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = SharedLinks/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nayzak.SharedLinks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -288,6 +431,7 @@
 				F516014D1F29CFE900555876 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
