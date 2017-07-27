@@ -23,6 +23,8 @@
 		F5E3BC7E1F29ED53007E5AD6 /* Bond.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5E3BC7B1F29ED53007E5AD6 /* Bond.framework.dSYM */; };
 		F5E3BC7F1F29ED53007E5AD6 /* Diff.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5E3BC7C1F29ED53007E5AD6 /* Diff.framework.dSYM */; };
 		F5E3BC801F29ED53007E5AD6 /* ReactiveKit.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5E3BC7D1F29ED53007E5AD6 /* ReactiveKit.framework.dSYM */; };
+		F5E3BC851F29EE1B007E5AD6 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E3BC841F29EE1B007E5AD6 /* Link.swift */; };
+		F5E3BC871F29EEDD007E5AD6 /* LinksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E3BC861F29EEDD007E5AD6 /* LinksService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -70,6 +72,8 @@
 		F5E3BC7B1F29ED53007E5AD6 /* Bond.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Bond.framework.dSYM; path = Carthage/Build/Mac/Bond.framework.dSYM; sourceTree = "<group>"; };
 		F5E3BC7C1F29ED53007E5AD6 /* Diff.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Diff.framework.dSYM; path = Carthage/Build/Mac/Diff.framework.dSYM; sourceTree = "<group>"; };
 		F5E3BC7D1F29ED53007E5AD6 /* ReactiveKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ReactiveKit.framework.dSYM; path = Carthage/Build/Mac/ReactiveKit.framework.dSYM; sourceTree = "<group>"; };
+		F5E3BC841F29EE1B007E5AD6 /* Link.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
+		F5E3BC861F29EEDD007E5AD6 /* LinksService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinksService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,8 @@
 		F516013E1F29CFE900555876 /* SharedLinks */ = {
 			isa = PBXGroup;
 			children = (
+				F5E3BC831F29EDE4007E5AD6 /* Entities */,
+				F5E3BC821F29EDD0007E5AD6 /* Services */,
 				F516013F1F29CFE900555876 /* AppDelegate.swift */,
 				F51601411F29CFE900555876 /* ViewController.swift */,
 				F51601431F29CFE900555876 /* Assets.xcassets */,
@@ -129,6 +135,22 @@
 				F5E3BC7D1F29ED53007E5AD6 /* ReactiveKit.framework.dSYM */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F5E3BC821F29EDD0007E5AD6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F5E3BC861F29EEDD007E5AD6 /* LinksService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F5E3BC831F29EDE4007E5AD6 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				F5E3BC841F29EE1B007E5AD6 /* Link.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,8 +226,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5E3BC851F29EE1B007E5AD6 /* Link.swift in Sources */,
 				F51601421F29CFE900555876 /* ViewController.swift in Sources */,
 				F51601401F29CFE900555876 /* AppDelegate.swift in Sources */,
+				F5E3BC871F29EEDD007E5AD6 /* LinksService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,20 @@
+//
+//  LinksService.swift
+//  SharedLinks
+//
+//  Created by Ian Kazlauskas on 27/07/2017.
+//  Copyright © 2017 Ian Kazlauskas. All rights reserved.
+//
+
+import Foundation
+import ReactiveKit
+
+class LinksService {
+
+  let links: SafeSignal<[Link]>
+
+  init() {
+    self.links = .just([])
+  }
+
+}
