@@ -15,7 +15,8 @@ extension Author {
     guard let name = json["name"].string else { return nil}
 
     self.name = name
-    self.avatar = json["profile_image_url_https"].string.flatMap(URL.init(string:))
+    self.avatar = json["profile_image_url_https"].string
+      .flatMap { $0.replacingOccurrences(of: "_normal", with: "") }
+      .flatMap(URL.init(string:))
   }
-
 }

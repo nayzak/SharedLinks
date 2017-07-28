@@ -21,7 +21,7 @@ class LinkTableCellView: NSTableCellView {
   var model: Model? {
     didSet {
       textField?.attributedStringValue = model.flatMap(LinkTableCellView.attributedText) ?? .empty
-      imageView?.sd_setImage(with: model?.image)
+      imageView?.sd_setImage(with: model?.image, placeholderImage: nil, options: .scaleDownLargeImages)
     }
   }
 
@@ -66,6 +66,20 @@ extension LinkTableCellView {
     }
 
     return NSAttributedString(attrStrings: paragraphs, separator: "\n")
+  }
+
+  override var imageView: NSImageView? {
+    didSet {
+      imageView?.apply {
+        $0.imageAlignment = .alignCenter
+        $0.imageScaling = .scaleProportionallyUpOrDown
+        $0.wantsLayer = true
+        $0.layer?.apply {
+          $0.cornerRadius = 3
+          $0.masksToBounds = true
+        }
+      }
+    }
   }
 
 }

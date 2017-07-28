@@ -17,6 +17,7 @@
 		F569772C1F2B569E00DCFD7B /* NSTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F569772B1F2B569E00DCFD7B /* NSTableView.swift */; };
 		F569772E1F2B681B00DCFD7B /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = F569772D1F2B681B00DCFD7B /* Author.swift */; };
 		F56977301F2B69B800DCFD7B /* Author+Twitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F569772F1F2B69B800DCFD7B /* Author+Twitter.swift */; };
+		F56977331F2B712E00DCFD7B /* Appliable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56977321F2B712E00DCFD7B /* Appliable.swift */; };
 		F5E3BC691F29E6A5007E5AD6 /* SwifterMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */; };
 		F5E3BC6A1F29E6A5007E5AD6 /* SwifterMac.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F5E3BC711F29E747007E5AD6 /* SwifterMac.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5E3BC701F29E747007E5AD6 /* SwifterMac.framework.dSYM */; };
@@ -82,6 +83,7 @@
 		F569772B1F2B569E00DCFD7B /* NSTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTableView.swift; sourceTree = "<group>"; };
 		F569772D1F2B681B00DCFD7B /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		F569772F1F2B69B800DCFD7B /* Author+Twitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Author+Twitter.swift"; sourceTree = "<group>"; };
+		F56977321F2B712E00DCFD7B /* Appliable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appliable.swift; sourceTree = "<group>"; };
 		F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwifterMac.framework; path = Carthage/Build/Mac/SwifterMac.framework; sourceTree = "<group>"; };
 		F5E3BC701F29E747007E5AD6 /* SwifterMac.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwifterMac.framework.dSYM; path = Carthage/Build/Mac/SwifterMac.framework.dSYM; sourceTree = "<group>"; };
 		F5E3BC721F29ED3C007E5AD6 /* Bond.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bond.framework; path = Carthage/Build/Mac/Bond.framework; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				F5E3BC8D1F29F362007E5AD6 /* SupportingFiles */,
+				F56977311F2B711900DCFD7B /* Utils */,
 				F5E3BC831F29EDE4007E5AD6 /* Entities */,
 				F5E3BC821F29EDD0007E5AD6 /* Services */,
 				F5E3BC981F29F4E6007E5AD6 /* DataSources */,
@@ -153,6 +156,14 @@
 				F569772B1F2B569E00DCFD7B /* NSTableView.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F56977311F2B711900DCFD7B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F56977321F2B712E00DCFD7B /* Appliable.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		F5E3BC621F29E4D1007E5AD6 /* Frameworks */ = {
@@ -315,6 +326,7 @@
 				F52955D91F29FD6E00CFAF30 /* Swifter+ReactiveKit.swift in Sources */,
 				F569771E1F2B2C3B00DCFD7B /* LinkTableCellView.swift in Sources */,
 				F569772C1F2B569E00DCFD7B /* NSTableView.swift in Sources */,
+				F56977331F2B712E00DCFD7B /* Appliable.swift in Sources */,
 				F56977251F2B377B00DCFD7B /* NSAttributedString.swift in Sources */,
 				F5E3BC851F29EE1B007E5AD6 /* Link.swift in Sources */,
 				F569772E1F2B681B00DCFD7B /* Author.swift in Sources */,
