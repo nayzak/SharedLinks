@@ -14,11 +14,17 @@ import Bond
 class ViewController: NSViewController {
 
   private let service = LinksService()
-  
-  override func viewDidAppear() {
-    super.viewDidAppear()
 
-    service.links.bind(to: self) { vc, links in print(links) }
+  @IBOutlet weak var tableView: NSTableView!
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+    service.links.bind(to: tableView) { links, index, tableView in
+      let cell = tableView.make(withIdentifier: "LinkCell", owner: nil) as! NSTableCellView
+      cell.textField?.stringValue = links[index].description
+      return cell
+    }
   }
 
 }
