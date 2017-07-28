@@ -21,8 +21,19 @@ extension Link {
     
     self.url = url
     self.title = ""
-    self.description = text
+    self.description = text.removingTwitterShortLinks
     self.author = author
   }
-  
+}
+
+extension String {
+
+  fileprivate var removingTwitterShortLinks: String {
+    return replacingOccurrences(
+      of: "https?://t.co/[\\d\\w]+",
+      with: "",
+      options: .regularExpression,
+      range: startIndex ..< endIndex
+    ).trimmingCharacters(in: .whitespacesAndNewlines)
+  }
 }
