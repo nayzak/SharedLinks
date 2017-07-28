@@ -15,12 +15,25 @@ extension Link {
     guard
       let urlString = json["entities"]["urls"][0]["url"].string,
       let url = URL(string: urlString),
-      let description = json["text"].string
+      let text = json["text"].string,
+      let author = Author(tweetUser: json["user"])
     else { return nil}
     
     self.url = url
     self.title = ""
-    self.description = description
+    self.description = text.removingTwitterShortLinks
+    self.author = author
   }
-  
+}
+
+extension String {
+
+  fileprivate var removingTwitterShortLinks: String {
+    return replacingOccurrences(
+      of: "https?://t.co/[\\d\\w]+",
+      with: "",
+      options: .regularExpression,
+      range: startIndex ..< endIndex
+    ).trimmingCharacters(in: .whitespacesAndNewlines)
+  }
 }

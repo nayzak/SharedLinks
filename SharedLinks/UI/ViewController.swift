@@ -65,8 +65,8 @@ class ViewController: NSViewController {
 extension LinkTableCellView.Model {
 
   init(link: Link) {
-    self.image = link.url
-    self.title = ""
+    self.image = link.author.avatar
+    self.title = link.author.name
     self.subtitle = nil
     self.text = link.description
   }
