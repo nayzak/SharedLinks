@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F51307311F2C770800FB082A /* LinksTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51307301F2C770800FB082A /* LinksTableView.swift */; };
 		F52955D91F29FD6E00CFAF30 /* Swifter+ReactiveKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52955D81F29FD6E00CFAF30 /* Swifter+ReactiveKit.swift */; };
 		F569771E1F2B2C3B00DCFD7B /* LinkTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F569771D1F2B2C3B00DCFD7B /* LinkTableCellView.swift */; };
 		F56977221F2B2FC700DCFD7B /* LinkTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F56977211F2B2FC700DCFD7B /* LinkTableCellView.xib */; };
@@ -73,6 +74,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F51307301F2C770800FB082A /* LinksTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinksTableView.swift; sourceTree = "<group>"; };
 		F516013C1F29CFE900555876 /* SharedLinks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharedLinks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F52955D81F29FD6E00CFAF30 /* Swifter+ReactiveKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Swifter+ReactiveKit.swift"; sourceTree = "<group>"; };
 		F569771D1F2B2C3B00DCFD7B /* LinkTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkTableCellView.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				F5E3BC921F29F362007E5AD6 /* ViewController.swift */,
 				F569771D1F2B2C3B00DCFD7B /* LinkTableCellView.swift */,
 				F56977211F2B2FC700DCFD7B /* LinkTableCellView.xib */,
+				F51307301F2C770800FB082A /* LinksTableView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				F569772C1F2B569E00DCFD7B /* NSTableView.swift in Sources */,
 				F56977331F2B712E00DCFD7B /* Appliable.swift in Sources */,
 				F56977251F2B377B00DCFD7B /* NSAttributedString.swift in Sources */,
+				F51307311F2C770800FB082A /* LinksTableView.swift in Sources */,
 				F5E3BC851F29EE1B007E5AD6 /* Link.swift in Sources */,
 				F569772E1F2B681B00DCFD7B /* Author.swift in Sources */,
 				F56977301F2B69B800DCFD7B /* Author+Twitter.swift in Sources */,
