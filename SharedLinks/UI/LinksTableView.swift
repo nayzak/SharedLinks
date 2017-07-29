@@ -88,7 +88,7 @@ extension LinksTableView {
     )
 
     vm.items.bind(to: self, using: bond)
-    
+
     reactive.selectedRow.bind(to: self) { view, row in
       vm.selectItem?(row)
       view.deselectRow(row)

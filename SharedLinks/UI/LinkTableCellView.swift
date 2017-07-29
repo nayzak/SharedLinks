@@ -11,11 +11,17 @@ import SDWebImage
 
 class LinkTableCellView: NSTableCellView {
 
-  struct Model {
+  struct Model: Equatable {
+
+    let uuid: Int
     let image: URL?
     let title: String
     let subtitle: String?
     let text: String
+    
+    static func==(lhs: Model, rhs: Model) -> Bool {
+      return lhs.uuid == rhs.uuid
+    }
   }
 
   var model: Model? {
