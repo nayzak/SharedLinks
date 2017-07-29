@@ -8,19 +8,18 @@
 
 import Cocoa
 
-@NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+  var window: NSWindow!
 
-
-  func applicationDidFinishLaunching(_ aNotification: Notification) {
-    // Insert code here to initialize your application
+  func applicationDidFinishLaunching(_ notification: Notification) {
+    let linksViewController = LinksListViewController()
+    window = NSWindow(contentViewController: linksViewController)
+    window.makeKeyAndOrderFront(nil)
   }
 
-  func applicationWillTerminate(_ aNotification: Notification) {
+  func applicationWillTerminate(_ notification: Notification) {
     // Insert code here to tear down your application
   }
-
-
 }
 

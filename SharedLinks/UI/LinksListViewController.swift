@@ -1,5 +1,5 @@
 //
-//  LinksTableViewController.swift
+//  LinksListViewController.swift
 //  SharedLinks
 //
 //  Created by Ian Kazlauskas on 27/07/2017.
@@ -12,14 +12,33 @@ import SwifterMac
 import ReactiveKit
 import Bond
 
-class LinksTableViewController: NSViewController {
+class LinksListViewController: NSViewController {
 
   private var linksTableView: LinksTableView!
   private let service = LinksService()
 
   override func loadView() {
+
     linksTableView = LinksTableView()
-    view = linksTableView
+    
+    let scrollView = NSScrollView().apply { v in
+      v.documentView = linksTableView
+      v.hasVerticalScroller = true
+      v.hasHorizontalScroller = false
+      v.drawsBackground = false
+      v.autoresizingMask = [.viewWidthSizable, .viewHeightSizable]
+    }
+
+    view = NSVisualEffectView().apply { v in
+      v.blendingMode = .behindWindow
+      v.addSubview(scrollView)
+      v.frame = NSRect(x: 0, y: 0, width: 400, height: 600)
+    }
+  }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    makeBindings()
   }
 
   private func open(url: URL) {

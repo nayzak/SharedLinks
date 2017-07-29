@@ -26,7 +26,7 @@ class LinksTableView: NSTableView {
   fileprivate var lastFrame: NSRect?
 
   convenience init() {
-    self.init(frame: NSRect(x: 0, y: 0, width: 300, height: 300))
+    self.init(frame: .zero)
   }
 
   override init(frame frameRect: NSRect) {
@@ -39,19 +39,20 @@ class LinksTableView: NSTableView {
   }
 
   private func setup() {
+
     allowsColumnReordering = false
     allowsColumnResizing = false
-    intercellSpacing = .zero
-    usesAlternatingRowBackgroundColors = true
-    enclosingScrollView?.drawsBackground = false
     backgroundColor = .clear
     verticalMotionCanBeginDrag = false
     allowsMultipleSelection = false
     allowsEmptySelection = true
     allowsColumnSelection = false
     selectionHighlightStyle = .none
+    
     let column = NSTableColumn(identifier: "Links")
     addTableColumn(column)
+    headerView = nil
+
     let cellID = Cell.identifier
     let nib = NSNib(nibNamed: cellID, bundle: nil)
     register(nib, forIdentifier: cellID)
@@ -89,10 +90,12 @@ extension LinksTableView {
 
     vm.items.bind(to: self, using: bond)
 
-    reactive.selectedRow.bind(to: self) { view, row in
-      vm.selectItem?(row)
-      view.deselectRow(row)
-    }
+    reactive.selectedRow
+      .filter { $0 >= 0 }
+      .bind(to: self) { view, row in
+        vm.selectItem?(row)
+        view.deselectRow(row)
+      }
   }
 
   private func unbindViewModel() {

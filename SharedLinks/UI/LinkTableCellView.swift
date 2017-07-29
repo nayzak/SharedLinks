@@ -50,24 +50,24 @@ extension LinkTableCellView {
     if (!model.title.isEmpty) {
       let title = NSAttributedString(string: model.title, attributes: [
         NSFontAttributeName: NSFont.boldSystemFont(ofSize: 13),
-        NSForegroundColorAttributeName: NSColor.black
-        ])
+        NSForegroundColorAttributeName: NSColor(calibratedWhite: 51 / 255.0, alpha: 1)
+      ])
       paragraphs.append(title)
     }
 
     if let subtitleString = model.subtitle, !subtitleString.isEmpty {
       let subtitle = NSAttributedString(string: subtitleString, attributes: [
         NSFontAttributeName: NSFont.boldSystemFont(ofSize: 12),
-        NSForegroundColorAttributeName: NSColor.black
-        ])
+        NSForegroundColorAttributeName: NSColor(calibratedWhite: 76 / 255.0, alpha: 1)
+      ])
       paragraphs.append(subtitle)
     }
 
     if (!model.text.isEmpty) {
       let text = NSAttributedString(string: model.text, attributes: [
         NSFontAttributeName: NSFont.systemFont(ofSize: 12),
-        NSForegroundColorAttributeName: NSColor.black
-        ])
+        NSForegroundColorAttributeName: NSColor(calibratedWhite: 76 / 255.0, alpha: 1)
+      ])
       paragraphs.append(text)
     }
 
@@ -81,7 +81,7 @@ extension LinkTableCellView {
         $0.imageScaling = .scaleProportionallyUpOrDown
         $0.wantsLayer = true
         $0.layer?.apply {
-          $0.cornerRadius = 3
+          $0.cornerRadius = 2
           $0.masksToBounds = true
         }
       }
@@ -98,10 +98,10 @@ extension LinkTableCellView {
 
   static func rowHeight(forWidth cellWidth: CGFloat, using model: Model) -> CGFloat {
     let padding: CGFloat = 8
-    let imageSize = NSSize(width: 50, height: 50)
-    let maxHeight: CGFloat = 100
+    let imageSize = NSSize(width: 36, height: 36)
+    let maxHeight: CGFloat = 200
     let minHeight: CGFloat = imageSize.height + 2 * padding
-    let textWidth = cellWidth - (imageSize.width + 2 * padding + 8)
+    let textWidth = cellWidth - (imageSize.width + 2 * padding + 10)
     let maxTextSize = NSSize(width: textWidth, height: maxHeight - 2 * padding)
     let text = attributedText(with: model)
     let textSize = text.boundingRect(with: maxTextSize, options: [.usesLineFragmentOrigin, .usesFontLeading])
