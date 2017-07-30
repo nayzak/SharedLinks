@@ -47,6 +47,7 @@ class LinksTableView: NSTableView {
     allowsMultipleSelection = false
     allowsEmptySelection = true
     allowsColumnSelection = false
+    intercellSpacing = .zero
     selectionHighlightStyle = .none
     
     let column = NSTableColumn(identifier: "Links")
