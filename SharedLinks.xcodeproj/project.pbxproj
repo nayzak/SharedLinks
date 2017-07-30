@@ -451,7 +451,7 @@
 				);
 				INFOPLIST_FILE = SharedLinks/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nayzak.SharedLinks;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nayzak.shared-links";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -468,7 +468,7 @@
 				);
 				INFOPLIST_FILE = SharedLinks/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nayzak.SharedLinks;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nayzak.shared-links";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
