@@ -10,6 +10,24 @@
     </br>
     <img src="https://github.com/nayzak/shared-links/raw/feature/project_description/ReadmeAssets/popover.png"/> 
  </p> 
- 
+
 ***
 
+# Build
+
+**Use pre-compiled dylibs**
+
+1. Please make sure Carthage is installed.
+
+  **homebrew**
+  ```
+  brew install carthage
+  ```
+  **or download installer at [Carthage releases page](https://github.com/Carthage/Carthage/releases) and run it.**
+
+2. Run carthage bootstrap in project root directory.
+  ```
+  carthage bootstrap --platform macOS --configuration Release --cache-builds
+  ```
+  
+3. Open `.xcodeproj` file.
