@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://github.com/nayzak/shared-links/raw/develop/ReadmeAssets/icon_256x256.png"/> 
+    <img src="https://github.com/nayzak/shared-links/raw/develop/ReadmeAssets/icon_256x256.png"/>
 </p>
 
 <h1 align="center">Shared Links</h1>
@@ -8,8 +8,8 @@
  <p align="center">
     In the Shared Links, you can see links from people you follow on Twitter like you did it in Safari prior 11 release.
     </br>
-    <img src="https://github.com/nayzak/shared-links/develop/ReadmeAssets/popover.png"/> 
- </p> 
+    <img src="https://github.com/nayzak/shared-links/raw/develop/ReadmeAssets/popover.png"/>
+ </p>
 
 ***
 
@@ -29,5 +29,5 @@
   ```
   carthage bootstrap --platform macOS --configuration Release --cache-builds
   ```
-  
+
 3. Open `.xcodeproj` file.
