@@ -11,8 +11,14 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
   var window: NSWindow!
+  var menuBarItem: NSStatusItem!
 
   func applicationDidFinishLaunching(_ notification: Notification) {
+
+    menuBarItem = NSStatusBar.system().statusItem(withLength: NSSquareStatusItemLength).apply {
+      $0.button?.image = #imageLiteral(resourceName: "menu-bar-icon")
+    }
+    
     let linksViewController = LinksListViewController()
     window = NSWindow(contentViewController: linksViewController)
     window.makeKeyAndOrderFront(nil)
