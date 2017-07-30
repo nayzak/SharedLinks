@@ -11,12 +11,26 @@ import SDWebImage
 
 class LinkTableCellView: NSTableCellView {
 
-  struct Model {
+  struct Model: Equatable {
+
+    let uuid: Int
     let image: URL?
     let title: String
     let subtitle: String?
     let text: String
+    
+    static func==(lhs: Model, rhs: Model) -> Bool {
+      return lhs.uuid == rhs.uuid
+    }
   }
+
+  @IBOutlet fileprivate weak var imageWidthConstraint: NSLayoutConstraint!
+  @IBOutlet fileprivate weak var imageHeightConstraint: NSLayoutConstraint!
+  @IBOutlet fileprivate weak var imageTrailingToLabelLeadingConstraint: NSLayoutConstraint!
+  @IBOutlet fileprivate weak var leftPaddingConstraint: NSLayoutConstraint!
+  @IBOutlet fileprivate weak var topPaddingConstraint: NSLayoutConstraint!
+  @IBOutlet fileprivate weak var rightPaddingConstraint: NSLayoutConstraint!
+  @IBOutlet fileprivate weak var bottomPaddingConstraint: NSLayoutConstraint!
 
   var model: Model? {
     didSet {
@@ -44,24 +58,24 @@ extension LinkTableCellView {
     if (!model.title.isEmpty) {
       let title = NSAttributedString(string: model.title, attributes: [
         NSFontAttributeName: NSFont.boldSystemFont(ofSize: 13),
-        NSForegroundColorAttributeName: NSColor.black
-        ])
+        NSForegroundColorAttributeName: NSColor(calibratedWhite: 51 / 255.0, alpha: 1)
+      ])
       paragraphs.append(title)
     }
 
     if let subtitleString = model.subtitle, !subtitleString.isEmpty {
       let subtitle = NSAttributedString(string: subtitleString, attributes: [
         NSFontAttributeName: NSFont.boldSystemFont(ofSize: 12),
-        NSForegroundColorAttributeName: NSColor.black
-        ])
+        NSForegroundColorAttributeName: NSColor(calibratedWhite: 76 / 255.0, alpha: 1)
+      ])
       paragraphs.append(subtitle)
     }
 
     if (!model.text.isEmpty) {
       let text = NSAttributedString(string: model.text, attributes: [
         NSFontAttributeName: NSFont.systemFont(ofSize: 12),
-        NSForegroundColorAttributeName: NSColor.black
-        ])
+        NSForegroundColorAttributeName: NSColor(calibratedWhite: 76 / 255.0, alpha: 1)
+      ])
       paragraphs.append(text)
     }
 
@@ -75,7 +89,7 @@ extension LinkTableCellView {
         $0.imageScaling = .scaleProportionallyUpOrDown
         $0.wantsLayer = true
         $0.layer?.apply {
-          $0.cornerRadius = 3
+          $0.cornerRadius = 2
           $0.masksToBounds = true
         }
       }
@@ -91,15 +105,46 @@ extension LinkTableCellView {
   static let identifier = "LinkTableCellView"
 
   static func rowHeight(forWidth cellWidth: CGFloat, using model: Model) -> CGFloat {
-    let padding: CGFloat = 8
-    let imageSize = NSSize(width: 50, height: 50)
-    let maxHeight: CGFloat = 100
-    let minHeight: CGFloat = imageSize.height + 2 * padding
-    let textWidth = cellWidth - (imageSize.width + 2 * padding + 8)
-    let maxTextSize = NSSize(width: textWidth, height: maxHeight - 2 * padding)
+    let totalHorizontalPadding = padding.left + padding.right
+    let totalVerticalPadding = padding.top + padding.bottom
+    let maxHeight: CGFloat = 200
+    let minHeight = imageSize.height + totalVerticalPadding
+    let textWidth = cellWidth - (imageSize.width + imageToLabelHorizontalSpace + totalHorizontalPadding)
+    let maxTextSize = NSSize(width: textWidth, height: maxHeight - totalVerticalPadding)
     let text = attributedText(with: model)
-    let textSize = text.boundingRect(with: maxTextSize, options: [.usesLineFragmentOrigin, .usesFontLeading])
-    let calculatedHeight = textSize.height + 2 * padding
+    let textSize = text.boundingRect(
+      with: maxTextSize,
+      options: [.usesLineFragmentOrigin, .usesFontLeading]
+    )
+    let calculatedHeight = textSize.height + totalVerticalPadding
     return max(minHeight, calculatedHeight)
   }
+
+  private static let instance: LinkTableCellView = {
+    let nib = NSNib(nibNamed: identifier, bundle: nil)!
+    var nibObjects = NSArray()
+    nib.instantiate(withOwner: nil, topLevelObjects: &nibObjects)
+    return nibObjects.firstObject as! LinkTableCellView
+  }()
+
+  private static var padding: EdgeInsets {
+    return EdgeInsets(
+      top: instance.topPaddingConstraint.constant,
+      left: instance.leftPaddingConstraint.constant,
+      bottom: instance.bottomPaddingConstraint.constant,
+      right: instance.rightPaddingConstraint.constant
+    )
+  }
+
+  private static var imageSize: NSSize {
+    return NSSize(
+      width: instance.imageWidthConstraint.constant,
+      height: instance.imageHeightConstraint.constant
+    )
+  }
+
+  private static var imageToLabelHorizontalSpace: CGFloat {
+    return instance.imageTrailingToLabelLeadingConstraint.constant
+  }
+
 }
