@@ -39,6 +39,7 @@
 		F5E3BC971F29F362007E5AD6 /* LinksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E3BC921F29F362007E5AD6 /* LinksListViewController.swift */; };
 		F5E3BC9D1F29F54D007E5AD6 /* TwitterDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E3BC9C1F29F54D007E5AD6 /* TwitterDataSource.swift */; };
 		F5E3BC9F1F29F562007E5AD6 /* Link+Twitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E3BC9E1F29F562007E5AD6 /* Link+Twitter.swift */; };
+		F5E8721B1F2DBDAB00EB60AA /* GlobalEventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E8721A1F2DBDAB00EB60AA /* GlobalEventMonitor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -102,6 +103,7 @@
 		F5E3BC921F29F362007E5AD6 /* LinksListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinksListViewController.swift; sourceTree = "<group>"; };
 		F5E3BC9C1F29F54D007E5AD6 /* TwitterDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterDataSource.swift; sourceTree = "<group>"; };
 		F5E3BC9E1F29F562007E5AD6 /* Link+Twitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Link+Twitter.swift"; sourceTree = "<group>"; };
+		F5E8721A1F2DBDAB00EB60AA /* GlobalEventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalEventMonitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				F56977321F2B712E00DCFD7B /* Appliable.swift */,
+				F5E8721A1F2DBDAB00EB60AA /* GlobalEventMonitor.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5E8721B1F2DBDAB00EB60AA /* GlobalEventMonitor.swift in Sources */,
 				F5E3BC941F29F362007E5AD6 /* AppDelegate.swift in Sources */,
 				F5E3BC9F1F29F562007E5AD6 /* Link+Twitter.swift in Sources */,
 				F52955D91F29FD6E00CFAF30 /* Swifter+ReactiveKit.swift in Sources */,
