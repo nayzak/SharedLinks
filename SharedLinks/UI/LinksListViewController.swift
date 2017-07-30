@@ -40,6 +40,11 @@ class LinksListViewController: NSViewController {
     makeBindings()
   }
 
+  override func viewDidAppear() {
+    super.viewDidAppear()
+    service.updateLinks()
+  }
+
   private func open(url: URL) {
     NSWorkspace.shared().open(url)
   }

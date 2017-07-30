@@ -32,7 +32,7 @@ class TwitterDataSource {
     }
 
     func timeline(_ swifter: Swifter) -> Signal<[Link], TwitterDataSourceError> {
-      return swifter.reactive.homeTimeline()
+      return swifter.reactive.homeTimeline(count: 50)
         .map(decode)
         .mapError { TwitterDataSourceError.swifter($0) }
     }

@@ -14,15 +14,18 @@ class LinksService {
   let links: SafeSignal<[Link]>
   
   private let twitterDataSource = TwitterDataSource()
+  private let linksSubject = Property<[Link]>([])
+  private var updateLinksDisposable: Disposable?
 
   init() {
-
-    let links = Property<[Link]>([])
-    twitterDataSource.homeTimeline()
-      .recover(with: [])
-      .bind(to: links)
-    
-    self.links = links.toSignal()
+    self.links = self.linksSubject.toSignal()
+    updateLinks()
   }
 
+  func updateLinks() {
+    updateLinksDisposable?.dispose()
+    updateLinksDisposable = twitterDataSource.homeTimeline()
+      .suppressError(logging: true)
+      .bind(to: linksSubject)
+  }
 }
