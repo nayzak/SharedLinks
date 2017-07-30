@@ -29,12 +29,6 @@ class LinksListViewController: NSViewController {
       v.autoresizingMask = [.viewWidthSizable, .viewHeightSizable]
     }
 
-//    view = NSVisualEffectView().apply { v in
-//      v.blendingMode = .behindWindow
-//      v.addSubview(scrollView)
-//      v.frame = NSRect(x: 0, y: 0, width: 400, height: 600)
-//    }
-
     view = NSView().apply { v in
       v.addSubview(scrollView)
       v.frame = NSRect(x: 0, y: 0, width: 400, height: 600)

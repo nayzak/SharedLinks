@@ -24,6 +24,14 @@ class LinkTableCellView: NSTableCellView {
     }
   }
 
+  @IBOutlet fileprivate weak var imageWidthConstraint: NSLayoutConstraint!
+  @IBOutlet fileprivate weak var imageHeightConstraint: NSLayoutConstraint!
+  @IBOutlet fileprivate weak var imageTrailingToLabelLeadingConstraint: NSLayoutConstraint!
+  @IBOutlet fileprivate weak var leftPaddingConstraint: NSLayoutConstraint!
+  @IBOutlet fileprivate weak var topPaddingConstraint: NSLayoutConstraint!
+  @IBOutlet fileprivate weak var rightPaddingConstraint: NSLayoutConstraint!
+  @IBOutlet fileprivate weak var bottomPaddingConstraint: NSLayoutConstraint!
+
   var model: Model? {
     didSet {
       textField?.attributedStringValue = model.flatMap(LinkTableCellView.attributedText) ?? .empty
@@ -97,15 +105,46 @@ extension LinkTableCellView {
   static let identifier = "LinkTableCellView"
 
   static func rowHeight(forWidth cellWidth: CGFloat, using model: Model) -> CGFloat {
-    let padding: CGFloat = 8
-    let imageSize = NSSize(width: 36, height: 36)
+    let totalHorizontalPadding = padding.left + padding.right
+    let totalVerticalPadding = padding.top + padding.bottom
     let maxHeight: CGFloat = 200
-    let minHeight: CGFloat = imageSize.height + 2 * padding
-    let textWidth = cellWidth - (imageSize.width + 2 * padding + 10)
-    let maxTextSize = NSSize(width: textWidth, height: maxHeight - 2 * padding)
+    let minHeight = imageSize.height + totalVerticalPadding
+    let textWidth = cellWidth - (imageSize.width + imageToLabelHorizontalSpace + totalHorizontalPadding)
+    let maxTextSize = NSSize(width: textWidth, height: maxHeight - totalVerticalPadding)
     let text = attributedText(with: model)
-    let textSize = text.boundingRect(with: maxTextSize, options: [.usesLineFragmentOrigin, .usesFontLeading])
-    let calculatedHeight = textSize.height + 2 * padding
+    let textSize = text.boundingRect(
+      with: maxTextSize,
+      options: [.usesLineFragmentOrigin, .usesFontLeading]
+    )
+    let calculatedHeight = textSize.height + totalVerticalPadding
     return max(minHeight, calculatedHeight)
   }
+
+  private static let instance: LinkTableCellView = {
+    let nib = NSNib(nibNamed: identifier, bundle: nil)!
+    var nibObjects = NSArray()
+    nib.instantiate(withOwner: nil, topLevelObjects: &nibObjects)
+    return nibObjects.firstObject as! LinkTableCellView
+  }()
+
+  private static var padding: EdgeInsets {
+    return EdgeInsets(
+      top: instance.topPaddingConstraint.constant,
+      left: instance.leftPaddingConstraint.constant,
+      bottom: instance.bottomPaddingConstraint.constant,
+      right: instance.rightPaddingConstraint.constant
+    )
+  }
+
+  private static var imageSize: NSSize {
+    return NSSize(
+      width: instance.imageWidthConstraint.constant,
+      height: instance.imageHeightConstraint.constant
+    )
+  }
+
+  private static var imageToLabelHorizontalSpace: CGFloat {
+    return instance.imageTrailingToLabelLeadingConstraint.constant
+  }
+
 }

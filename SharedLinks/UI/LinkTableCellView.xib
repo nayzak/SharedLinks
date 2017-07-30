@@ -22,7 +22,7 @@
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSActionTemplate" id="o16-pg-xL1"/>
                 </imageView>
                 <textField verticalHuggingPriority="1000" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="1000" allowsExpansionToolTips="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDL-Fl-CJg">
-                    <rect key="frame" x="52" y="8" width="227" height="153"/>
+                    <rect key="frame" x="52" y="8" width="219" height="153"/>
                     <textFieldCell key="cell" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" id="viS-F4-OSG">
                         <font key="font" metaFont="system"/>
                         <string key="title">Table View Cell Table View Cell Table View Cell Table View Cell Table View Cell Table View Cell Table View Cell Table View Cell Table View Cell Table View Cell Table View Cell Table View Cell Table View Cell Table View Cell Table View Cell Table View Cell Table View Cell Table View Cell</string>
@@ -35,14 +35,21 @@
                 <constraint firstAttribute="bottom" secondItem="EDL-Fl-CJg" secondAttribute="bottom" constant="8" id="8TB-KZ-CnW"/>
                 <constraint firstItem="rjj-WU-8fw" firstAttribute="top" secondItem="EDL-Fl-CJg" secondAttribute="top" constant="3" id="Pf8-q9-v5V"/>
                 <constraint firstItem="EDL-Fl-CJg" firstAttribute="top" secondItem="cFC-89-8RL" secondAttribute="top" constant="8" id="Vhn-B0-MwP"/>
-                <constraint firstAttribute="trailing" secondItem="EDL-Fl-CJg" secondAttribute="trailing" constant="8" id="fDg-va-v6H"/>
+                <constraint firstAttribute="trailing" secondItem="EDL-Fl-CJg" secondAttribute="trailing" constant="16" id="fDg-va-v6H"/>
                 <constraint firstItem="EDL-Fl-CJg" firstAttribute="leading" secondItem="rjj-WU-8fw" secondAttribute="trailing" constant="10" id="fKK-rY-znP"/>
                 <constraint firstAttribute="bottom" secondItem="rjj-WU-8fw" secondAttribute="bottom" priority="999" constant="8" id="pmF-xN-o8E"/>
                 <constraint firstItem="rjj-WU-8fw" firstAttribute="leading" secondItem="cFC-89-8RL" secondAttribute="leading" constant="8" id="yJV-cu-dj0"/>
             </constraints>
             <connections>
+                <outlet property="bottomPaddingConstraint" destination="8TB-KZ-CnW" id="l0A-vA-1qt"/>
+                <outlet property="imageHeightConstraint" destination="2Ce-TP-yjg" id="Fnz-fs-Trf"/>
+                <outlet property="imageTrailingToLabelLeadingConstraint" destination="fKK-rY-znP" id="Xsv-da-HIz"/>
                 <outlet property="imageView" destination="rjj-WU-8fw" id="f1E-oY-CA0"/>
+                <outlet property="imageWidthConstraint" destination="kiQ-AE-8NX" id="nYK-cV-7t6"/>
+                <outlet property="leftPaddingConstraint" destination="yJV-cu-dj0" id="fB3-k3-loK"/>
+                <outlet property="rightPaddingConstraint" destination="fDg-va-v6H" id="FqZ-g3-yf0"/>
                 <outlet property="textField" destination="EDL-Fl-CJg" id="uBP-My-8cB"/>
+                <outlet property="topPaddingConstraint" destination="Vhn-B0-MwP" id="f2I-IK-58B"/>
             </connections>
             <point key="canvasLocation" x="-237.5" y="-165.5"/>
         </tableCellView>
