@@ -124,7 +124,9 @@ extension LinkTableCellView {
     let nib = NSNib(nibNamed: identifier, bundle: nil)!
     var nibObjects = NSArray()
     nib.instantiate(withOwner: nil, topLevelObjects: &nibObjects)
-    return nibObjects.firstObject as! LinkTableCellView
+    return nibObjects
+      .flatMap { $0 as? LinkTableCellView }
+      .first!
   }()
 
   private static var padding: EdgeInsets {

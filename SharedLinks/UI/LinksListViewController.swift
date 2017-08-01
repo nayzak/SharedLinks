@@ -59,7 +59,7 @@ class LinksListViewController: NSViewController {
 
     let selectedLinkIndex = SafePublishSubject<Int>()
 
-    let selectedLink = selectedLinkIndex.combineLatest(with: service.links) { $1[$0] }
+    let selectedLink = selectedLinkIndex.with(latestFrom: service.links) { $1[$0] }
     selectedLink.bind(to: self) { vc, link in vc.open(url: link.url) }
     
     linksTableView.viewModel = LinksTableView.Model(
