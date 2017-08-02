@@ -20,6 +20,9 @@
 		F569772E1F2B681B00DCFD7B /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = F569772D1F2B681B00DCFD7B /* Author.swift */; };
 		F56977301F2B69B800DCFD7B /* Author+Twitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F569772F1F2B69B800DCFD7B /* Author+Twitter.swift */; };
 		F56977331F2B712E00DCFD7B /* Appliable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56977321F2B712E00DCFD7B /* Appliable.swift */; };
+		F5A831501F31B1000027D24F /* FeedKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5A8314F1F31B1000027D24F /* FeedKit.framework */; };
+		F5A831511F31B1000027D24F /* FeedKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5A8314F1F31B1000027D24F /* FeedKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F5A831531F31B1110027D24F /* FeedKit.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5A831521F31B1110027D24F /* FeedKit.framework.dSYM */; };
 		F5E3BC691F29E6A5007E5AD6 /* SwifterMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */; };
 		F5E3BC6A1F29E6A5007E5AD6 /* SwifterMac.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F5E3BC711F29E747007E5AD6 /* SwifterMac.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5E3BC701F29E747007E5AD6 /* SwifterMac.framework.dSYM */; };
@@ -54,6 +57,7 @@
 				F5E3BC6A1F29E6A5007E5AD6 /* SwifterMac.framework in Embed Frameworks */,
 				F5E3BC781F29ED3C007E5AD6 /* Diff.framework in Embed Frameworks */,
 				F5E3BC761F29ED3C007E5AD6 /* Bond.framework in Embed Frameworks */,
+				F5A831511F31B1000027D24F /* FeedKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,6 +68,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				F5A831531F31B1110027D24F /* FeedKit.framework.dSYM in CopyFiles */,
 				F5E3BC711F29E747007E5AD6 /* SwifterMac.framework.dSYM in CopyFiles */,
 				F5E3BC7E1F29ED53007E5AD6 /* Bond.framework.dSYM in CopyFiles */,
 				F5E3BC7F1F29ED53007E5AD6 /* Diff.framework.dSYM in CopyFiles */,
@@ -88,6 +93,8 @@
 		F569772D1F2B681B00DCFD7B /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		F569772F1F2B69B800DCFD7B /* Author+Twitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Author+Twitter.swift"; sourceTree = "<group>"; };
 		F56977321F2B712E00DCFD7B /* Appliable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appliable.swift; sourceTree = "<group>"; };
+		F5A8314F1F31B1000027D24F /* FeedKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FeedKit.framework; path = Carthage/Build/Mac/FeedKit.framework; sourceTree = "<group>"; };
+		F5A831521F31B1110027D24F /* FeedKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = FeedKit.framework.dSYM; path = Carthage/Build/Mac/FeedKit.framework.dSYM; sourceTree = "<group>"; };
 		F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwifterMac.framework; path = Carthage/Build/Mac/SwifterMac.framework; sourceTree = "<group>"; };
 		F5E3BC701F29E747007E5AD6 /* SwifterMac.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwifterMac.framework.dSYM; path = Carthage/Build/Mac/SwifterMac.framework.dSYM; sourceTree = "<group>"; };
 		F5E3BC721F29ED3C007E5AD6 /* Bond.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bond.framework; path = Carthage/Build/Mac/Bond.framework; sourceTree = "<group>"; };
@@ -116,6 +123,7 @@
 				F5E3BC691F29E6A5007E5AD6 /* SwifterMac.framework in Frameworks */,
 				F5E3BC771F29ED3C007E5AD6 /* Diff.framework in Frameworks */,
 				F5E3BC751F29ED3C007E5AD6 /* Bond.framework in Frameworks */,
+				F5A831501F31B1000027D24F /* FeedKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,11 +182,13 @@
 		F5E3BC621F29E4D1007E5AD6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F5A8314F1F31B1000027D24F /* FeedKit.framework */,
 				F56977261F2B485900DCFD7B /* SDWebImage.framework */,
 				F5E3BC721F29ED3C007E5AD6 /* Bond.framework */,
 				F5E3BC731F29ED3C007E5AD6 /* Diff.framework */,
 				F5E3BC741F29ED3C007E5AD6 /* ReactiveKit.framework */,
 				F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */,
+				F5A831521F31B1110027D24F /* FeedKit.framework.dSYM */,
 				F56977291F2B486E00DCFD7B /* SDWebImage.framework.dSYM */,
 				F5E3BC701F29E747007E5AD6 /* SwifterMac.framework.dSYM */,
 				F5E3BC7B1F29ED53007E5AD6 /* Bond.framework.dSYM */,
