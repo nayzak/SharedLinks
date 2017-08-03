@@ -27,10 +27,45 @@ enum RSSDataSourceError: Error {
 class RSSDataSource {
 
   func feed() -> Signal<[Link], RSSDataSourceError> {
-    let url = URL(string: "https://geek-tv.ru/gtv.rss")!
-    return FeedParser.reactive.feed(at: url)
-      .mapError(RSSDataSourceError.init)
-      .map(RSSDataSource.decode)
+
+    func feed(_ url: URL) -> Signal<[Link], RSSDataSourceError> {
+      return FeedParser.reactive.feed(at: url)
+        .mapError(RSSDataSourceError.init)
+        .map(RSSDataSource.decode)
+    }
+
+    func combine(_ signals: [Signal<[Link], RSSDataSourceError>]) -> Signal<[Link], RSSDataSourceError> {
+      return combineLatest(signals) { $0.reduce([], +) }
+    }
+    
+    return combine(safariWebFeedSources.map(feed))
+  }
+
+  private struct SafariWebFeedSource {
+    let url: URL
+
+    init?(_ dict: [String:Any?]) {
+      guard let url = (dict["FeedURL"] as? String).flatMap(URL.init(string:)),
+            let state = (dict["State"] as? NSNumber)?.intValue,
+            state == 0
+        else { return nil }
+      self.url = url
+    }
+  }
+  
+  private var safariWebFeedSources: [URL] {
+    let webFeedSourcesPath = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true)
+      .first?
+      .appending("/Safari/WebFeedSources.plist")
+      .addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)
+    guard
+      let path = webFeedSourcesPath,
+      let rawFeedSources = NSArray(contentsOfFile: path) as? [[String:Any?]]
+    else { return [] }
+
+    return rawFeedSources
+      .flatMap(SafariWebFeedSource.init)
+      .map { $0.url }
   }
 
   private static func decode(parceResult result: FeedParserResult) -> [Link] {
@@ -51,5 +86,6 @@ class RSSDataSource {
 
     return items.flatMap(decode)
   }
-  
 }
+
+// /Users/nayzak/Library/Safari/WebFeedSources.plist
