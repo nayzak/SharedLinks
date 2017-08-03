@@ -13,22 +13,39 @@ import ReactiveKit
 
 extension FeedParser: ReactiveExtensionsProvider { }
 
+fileprivate let FeedParserQueue = DispatchQueue.global(qos: .background)
+
 extension ReactiveExtensions where Base: FeedParser {
 
-  func parce() -> Signal<FeedParserResult, FeedParserError> {
+  static func feed(at url: URL) -> Signal<FeedParserResult, FeedParserError> {
+
     return Signal { observer in
 
-      self.base.parseAsync(queue: .global(qos: .background)) { result in
-        switch(result) {
-        case .failure(let error):
-          observer.failed(FeedParserError(error: error))
-        default:
-          observer.completed(with: FeedParserResult(result: result))
+      var parser: FeedParser?
+      let task = URLSession.shared.downloadTask(with: url) { feedURL, _, error in
+        guard let feedURL = feedURL else {
+          observer.failed(.failedToDowndloadFeed)
+          return
+        }
+        parser = FeedParser(URL: feedURL)
+        guard let parser = parser else {
+          observer.failed(.failedToReadFeed)
+          return
+        }
+        parser.parseAsync(queue: FeedParserQueue) { result in
+          switch(result) {
+          case .failure:
+            observer.failed(.failedToParseFeed)
+          default:
+            observer.completed(with: FeedParserResult(result: result))
+          }
         }
       }
+      task.resume()
       
       return BlockDisposable {
-        self.base.abortParsing()
+        task.cancel()
+        parser?.abortParsing()
       }
     }
   }
@@ -52,9 +69,7 @@ enum FeedParserResult {
 
 enum FeedParserError: Error {
 
-  case other
-
-  init(error: NSError) {
-    self = .other
-  }
+  case failedToDowndloadFeed
+  case failedToReadFeed
+  case failedToParseFeed
 }

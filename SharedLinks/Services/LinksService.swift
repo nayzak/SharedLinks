@@ -24,12 +24,8 @@ class LinksService {
   }
 
   func updateLinks() {
-    let twiterFeed = twitterDataSource.homeTimeline()
-      .suppressError(logging: true)
-      .start(with: [])
-    let rssFeed = rssDataSource.feed()
-      .suppressError(logging: true)
-      .start(with: [])
+    let twiterFeed = twitterDataSource.homeTimeline().suppressError(logging: true)
+    let rssFeed = rssDataSource.feed().suppressError(logging: true)
     let feed = combineLatest(twiterFeed, rssFeed, combine: +).map(LinksService.sort)
     updateLinksDisposable?.dispose()
     updateLinksDisposable = feed.bind(to: linksSubject)

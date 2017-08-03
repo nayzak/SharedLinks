@@ -28,11 +28,7 @@ class RSSDataSource {
 
   func feed() -> Signal<[Link], RSSDataSourceError> {
     let url = URL(string: "https://geek-tv.ru/gtv.rss")!
-    guard let parcer = FeedParser(URL: url) else {
-      return .failed(.failedToCreateFeedParcer)
-    }
-
-    return parcer.reactive.parce()
+    return FeedParser.reactive.feed(at: url)
       .mapError(RSSDataSourceError.init)
       .map(RSSDataSource.decode)
   }
