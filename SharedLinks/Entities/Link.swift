@@ -13,6 +13,7 @@ struct Link {
   let url: URL
   let title: String
   let description: String
+  let publishDate: Date
   let author: Author
   
 }

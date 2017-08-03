@@ -24,12 +24,20 @@ class LinksService {
   }
 
   func updateLinks() {
-    updateLinksDisposable?.dispose()
-//    updateLinksDisposable = twitterDataSource.homeTimeline()
-//      .suppressError(logging: true)
-//      .bind(to: linksSubject)
-    updateLinksDisposable = rssDataSource.feed()
+    let twiterFeed = twitterDataSource.homeTimeline()
       .suppressError(logging: true)
-      .bind(to: linksSubject)
+      .start(with: [])
+    let rssFeed = rssDataSource.feed()
+      .suppressError(logging: true)
+      .start(with: [])
+    let feed = combineLatest(twiterFeed, rssFeed, combine: +).map(LinksService.sort)
+    updateLinksDisposable?.dispose()
+    updateLinksDisposable = feed.bind(to: linksSubject)
+  }
+
+  private static func sort(_ links: [Link]) -> [Link] {
+    return links.sorted { lhs, rhs in
+      return lhs.publishDate > rhs.publishDate
+    }
   }
 }

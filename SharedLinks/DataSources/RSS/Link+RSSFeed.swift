@@ -14,12 +14,14 @@ extension Link {
   init?(rssFeedItem item: RSSFeedItem, author: Author) {
     guard
       let url = item.link.flatMap(URL.init(string:)),
-      let text = item.description
+      let text = item.description,
+      let publishDate = item.pubDate
     else { return nil }
     
     self.url = url
     self.title = item.title ?? ""
     self.description = text.removingHtmlTags
+    self.publishDate = publishDate
     self.author = author
   }
 }
