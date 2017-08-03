@@ -20,9 +20,14 @@
 		F569772E1F2B681B00DCFD7B /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = F569772D1F2B681B00DCFD7B /* Author.swift */; };
 		F56977301F2B69B800DCFD7B /* Author+Twitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F569772F1F2B69B800DCFD7B /* Author+Twitter.swift */; };
 		F56977331F2B712E00DCFD7B /* Appliable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56977321F2B712E00DCFD7B /* Appliable.swift */; };
+		F592223F1F33121B0090E6C3 /* FeedParser+ReactiveKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F592223E1F33121B0090E6C3 /* FeedParser+ReactiveKit.swift */; };
 		F5A831501F31B1000027D24F /* FeedKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5A8314F1F31B1000027D24F /* FeedKit.framework */; };
 		F5A831511F31B1000027D24F /* FeedKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5A8314F1F31B1000027D24F /* FeedKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F5A831531F31B1110027D24F /* FeedKit.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5A831521F31B1110027D24F /* FeedKit.framework.dSYM */; };
+		F5A831571F31B1C00027D24F /* RSSDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A831561F31B1C00027D24F /* RSSDataSource.swift */; };
+		F5A831591F31B5190027D24F /* Author+RSSFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A831581F31B5190027D24F /* Author+RSSFeed.swift */; };
+		F5A8315B1F31B5C50027D24F /* Link+RSSFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8315A1F31B5C50027D24F /* Link+RSSFeed.swift */; };
+		F5A8315D1F31B6D40027D24F /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8315C1F31B6D40027D24F /* String.swift */; };
 		F5E3BC691F29E6A5007E5AD6 /* SwifterMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */; };
 		F5E3BC6A1F29E6A5007E5AD6 /* SwifterMac.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F5E3BC711F29E747007E5AD6 /* SwifterMac.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5E3BC701F29E747007E5AD6 /* SwifterMac.framework.dSYM */; };
@@ -93,8 +98,13 @@
 		F569772D1F2B681B00DCFD7B /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		F569772F1F2B69B800DCFD7B /* Author+Twitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Author+Twitter.swift"; sourceTree = "<group>"; };
 		F56977321F2B712E00DCFD7B /* Appliable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appliable.swift; sourceTree = "<group>"; };
+		F592223E1F33121B0090E6C3 /* FeedParser+ReactiveKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FeedParser+ReactiveKit.swift"; sourceTree = "<group>"; };
 		F5A8314F1F31B1000027D24F /* FeedKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FeedKit.framework; path = Carthage/Build/Mac/FeedKit.framework; sourceTree = "<group>"; };
 		F5A831521F31B1110027D24F /* FeedKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = FeedKit.framework.dSYM; path = Carthage/Build/Mac/FeedKit.framework.dSYM; sourceTree = "<group>"; };
+		F5A831561F31B1C00027D24F /* RSSDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSDataSource.swift; sourceTree = "<group>"; };
+		F5A831581F31B5190027D24F /* Author+RSSFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Author+RSSFeed.swift"; sourceTree = "<group>"; };
+		F5A8315A1F31B5C50027D24F /* Link+RSSFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Link+RSSFeed.swift"; sourceTree = "<group>"; };
+		F5A8315C1F31B6D40027D24F /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwifterMac.framework; path = Carthage/Build/Mac/SwifterMac.framework; sourceTree = "<group>"; };
 		F5E3BC701F29E747007E5AD6 /* SwifterMac.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwifterMac.framework.dSYM; path = Carthage/Build/Mac/SwifterMac.framework.dSYM; sourceTree = "<group>"; };
 		F5E3BC721F29ED3C007E5AD6 /* Bond.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bond.framework; path = Carthage/Build/Mac/Bond.framework; sourceTree = "<group>"; };
@@ -175,8 +185,20 @@
 			children = (
 				F56977321F2B712E00DCFD7B /* Appliable.swift */,
 				F5E8721A1F2DBDAB00EB60AA /* GlobalEventMonitor.swift */,
+				F5A8315C1F31B6D40027D24F /* String.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		F5A831551F31B1A20027D24F /* RSS */ = {
+			isa = PBXGroup;
+			children = (
+				F5A831561F31B1C00027D24F /* RSSDataSource.swift */,
+				F5A831581F31B5190027D24F /* Author+RSSFeed.swift */,
+				F5A8315A1F31B5C50027D24F /* Link+RSSFeed.swift */,
+				F592223E1F33121B0090E6C3 /* FeedParser+ReactiveKit.swift */,
+			);
+			path = RSS;
 			sourceTree = "<group>";
 		};
 		F5E3BC621F29E4D1007E5AD6 /* Frameworks */ = {
@@ -247,6 +269,7 @@
 		F5E3BC981F29F4E6007E5AD6 /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
+				F5A831551F31B1A20027D24F /* RSS */,
 				F5E3BC9B1F29F52E007E5AD6 /* Twitter */,
 			);
 			path = DataSources;
@@ -338,18 +361,23 @@
 			files = (
 				F5E8721B1F2DBDAB00EB60AA /* GlobalEventMonitor.swift in Sources */,
 				F5E3BC941F29F362007E5AD6 /* AppDelegate.swift in Sources */,
+				F5A8315D1F31B6D40027D24F /* String.swift in Sources */,
 				F5E3BC9F1F29F562007E5AD6 /* Link+Twitter.swift in Sources */,
 				F52955D91F29FD6E00CFAF30 /* Swifter+ReactiveKit.swift in Sources */,
 				F569771E1F2B2C3B00DCFD7B /* LinkTableCellView.swift in Sources */,
 				F569772C1F2B569E00DCFD7B /* NSTableView.swift in Sources */,
 				F56977331F2B712E00DCFD7B /* Appliable.swift in Sources */,
 				F56977251F2B377B00DCFD7B /* NSAttributedString.swift in Sources */,
+				F592223F1F33121B0090E6C3 /* FeedParser+ReactiveKit.swift in Sources */,
 				F51307311F2C770800FB082A /* LinksTableView.swift in Sources */,
 				F5E3BC851F29EE1B007E5AD6 /* Link.swift in Sources */,
+				F5A8315B1F31B5C50027D24F /* Link+RSSFeed.swift in Sources */,
 				F569772E1F2B681B00DCFD7B /* Author.swift in Sources */,
 				F56977301F2B69B800DCFD7B /* Author+Twitter.swift in Sources */,
 				F51307351F2C994300FB082A /* main.swift in Sources */,
+				F5A831591F31B5190027D24F /* Author+RSSFeed.swift in Sources */,
 				F5E3BC9D1F29F54D007E5AD6 /* TwitterDataSource.swift in Sources */,
+				F5A831571F31B1C00027D24F /* RSSDataSource.swift in Sources */,
 				F5E3BC971F29F362007E5AD6 /* LinksListViewController.swift in Sources */,
 				F5E3BC871F29EEDD007E5AD6 /* LinksService.swift in Sources */,
 			);

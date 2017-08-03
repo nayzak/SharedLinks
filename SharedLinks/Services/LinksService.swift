@@ -14,6 +14,7 @@ class LinksService {
   let links: SafeSignal<[Link]>
   
   private let twitterDataSource = TwitterDataSource()
+  private let rssDataSource = RSSDataSource()
   private let linksSubject = Property<[Link]>([])
   private var updateLinksDisposable: Disposable?
 
@@ -24,7 +25,10 @@ class LinksService {
 
   func updateLinks() {
     updateLinksDisposable?.dispose()
-    updateLinksDisposable = twitterDataSource.homeTimeline()
+//    updateLinksDisposable = twitterDataSource.homeTimeline()
+//      .suppressError(logging: true)
+//      .bind(to: linksSubject)
+    updateLinksDisposable = rssDataSource.feed()
       .suppressError(logging: true)
       .bind(to: linksSubject)
   }
