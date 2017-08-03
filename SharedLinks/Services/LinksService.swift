@@ -14,6 +14,7 @@ class LinksService {
   let links: SafeSignal<[Link]>
   
   private let twitterDataSource = TwitterDataSource()
+  private let rssDataSource = RSSDataSource()
   private let linksSubject = Property<[Link]>([])
   private var updateLinksDisposable: Disposable?
 
@@ -23,9 +24,16 @@ class LinksService {
   }
 
   func updateLinks() {
+    let twiterFeed = twitterDataSource.homeTimeline().suppressError(logging: true)
+    let rssFeed = rssDataSource.feed().suppressError(logging: true)
+    let feed = combineLatest(twiterFeed, rssFeed, combine: +).map(LinksService.sort)
     updateLinksDisposable?.dispose()
-    updateLinksDisposable = twitterDataSource.homeTimeline()
-      .suppressError(logging: true)
-      .bind(to: linksSubject)
+    updateLinksDisposable = feed.bind(to: linksSubject)
+  }
+
+  private static func sort(_ links: [Link]) -> [Link] {
+    return links.sorted { lhs, rhs in
+      return lhs.publishDate > rhs.publishDate
+    }
   }
 }

@@ -76,7 +76,7 @@ extension LinkTableCellView.Model {
     self.uuid = link.url.hashValue
     self.image = link.author.avatar
     self.title = link.author.name
-    self.subtitle = nil
+    self.subtitle = link.title
     self.text = link.description
   }
 }

@@ -65,8 +65,8 @@ extension LinkTableCellView {
 
     if let subtitleString = model.subtitle, !subtitleString.isEmpty {
       let subtitle = NSAttributedString(string: subtitleString, attributes: [
-        NSFontAttributeName: NSFont.boldSystemFont(ofSize: 12),
-        NSForegroundColorAttributeName: NSColor(calibratedWhite: 76 / 255.0, alpha: 1)
+        NSFontAttributeName: NSFont.systemFont(ofSize: 12),
+        NSForegroundColorAttributeName: NSColor(calibratedWhite: 51 / 255.0, alpha: 1)
       ])
       paragraphs.append(subtitle)
     }
@@ -107,7 +107,7 @@ extension LinkTableCellView {
   static func rowHeight(forWidth cellWidth: CGFloat, using model: Model) -> CGFloat {
     let totalHorizontalPadding = padding.left + padding.right
     let totalVerticalPadding = padding.top + padding.bottom
-    let maxHeight: CGFloat = 200
+    let maxHeight: CGFloat = 150
     let minHeight = imageSize.height + totalVerticalPadding
     let textWidth = cellWidth - (imageSize.width + imageToLabelHorizontalSpace + totalHorizontalPadding)
     let maxTextSize = NSSize(width: textWidth, height: maxHeight - totalVerticalPadding)
