@@ -29,6 +29,8 @@
 		F5A8315B1F31B5C50027D24F /* Link+RSSFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8315A1F31B5C50027D24F /* Link+RSSFeed.swift */; };
 		F5A8315D1F31B6D40027D24F /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8315C1F31B6D40027D24F /* String.swift */; };
 		F5B607B51F3423D700D137D4 /* NSArray+ReactiveKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B607B41F3423D700D137D4 /* NSArray+ReactiveKit.swift */; };
+		F5B607B71F342D3700D137D4 /* Author+AtomFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B607B61F342D3700D137D4 /* Author+AtomFeed.swift */; };
+		F5B607B91F342D9E00D137D4 /* Link+AtomFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B607B81F342D9E00D137D4 /* Link+AtomFeed.swift */; };
 		F5E3BC691F29E6A5007E5AD6 /* SwifterMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */; };
 		F5E3BC6A1F29E6A5007E5AD6 /* SwifterMac.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F5E3BC711F29E747007E5AD6 /* SwifterMac.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5E3BC701F29E747007E5AD6 /* SwifterMac.framework.dSYM */; };
@@ -107,6 +109,8 @@
 		F5A8315A1F31B5C50027D24F /* Link+RSSFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Link+RSSFeed.swift"; sourceTree = "<group>"; };
 		F5A8315C1F31B6D40027D24F /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		F5B607B41F3423D700D137D4 /* NSArray+ReactiveKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSArray+ReactiveKit.swift"; sourceTree = "<group>"; };
+		F5B607B61F342D3700D137D4 /* Author+AtomFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Author+AtomFeed.swift"; sourceTree = "<group>"; };
+		F5B607B81F342D9E00D137D4 /* Link+AtomFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Link+AtomFeed.swift"; sourceTree = "<group>"; };
 		F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwifterMac.framework; path = Carthage/Build/Mac/SwifterMac.framework; sourceTree = "<group>"; };
 		F5E3BC701F29E747007E5AD6 /* SwifterMac.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwifterMac.framework.dSYM; path = Carthage/Build/Mac/SwifterMac.framework.dSYM; sourceTree = "<group>"; };
 		F5E3BC721F29ED3C007E5AD6 /* Bond.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bond.framework; path = Carthage/Build/Mac/Bond.framework; sourceTree = "<group>"; };
@@ -198,7 +202,9 @@
 			children = (
 				F5A831561F31B1C00027D24F /* RSSDataSource.swift */,
 				F5A831581F31B5190027D24F /* Author+RSSFeed.swift */,
+				F5B607B61F342D3700D137D4 /* Author+AtomFeed.swift */,
 				F5A8315A1F31B5C50027D24F /* Link+RSSFeed.swift */,
+				F5B607B81F342D9E00D137D4 /* Link+AtomFeed.swift */,
 				F592223E1F33121B0090E6C3 /* FeedParser+ReactiveKit.swift */,
 			);
 			path = RSS;
@@ -375,12 +381,14 @@
 				F5B607B51F3423D700D137D4 /* NSArray+ReactiveKit.swift in Sources */,
 				F5A8315D1F31B6D40027D24F /* String.swift in Sources */,
 				F5E3BC9F1F29F562007E5AD6 /* Link+Twitter.swift in Sources */,
+				F5B607B71F342D3700D137D4 /* Author+AtomFeed.swift in Sources */,
 				F52955D91F29FD6E00CFAF30 /* Swifter+ReactiveKit.swift in Sources */,
 				F569771E1F2B2C3B00DCFD7B /* LinkTableCellView.swift in Sources */,
 				F569772C1F2B569E00DCFD7B /* NSTableView.swift in Sources */,
 				F56977331F2B712E00DCFD7B /* Appliable.swift in Sources */,
 				F56977251F2B377B00DCFD7B /* NSAttributedString.swift in Sources */,
 				F592223F1F33121B0090E6C3 /* FeedParser+ReactiveKit.swift in Sources */,
+				F5B607B91F342D9E00D137D4 /* Link+AtomFeed.swift in Sources */,
 				F51307311F2C770800FB082A /* LinksTableView.swift in Sources */,
 				F5E3BC851F29EE1B007E5AD6 /* Link.swift in Sources */,
 				F5A8315B1F31B5C50027D24F /* Link+RSSFeed.swift in Sources */,

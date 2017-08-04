@@ -78,22 +78,29 @@ class RSSDataSource {
 
   private static func decode(parceResult result: FeedParserResult) -> [Link] {
     switch (result) {
-    case .atom: return []
+    case .atom(let feed): return RSSDataSource.decode(atomFeed: feed)
     case .rss(let feed): return RSSDataSource.decode(rssFeed: feed)
     case .json: return []
     }
   }
 
   private static func decode(rssFeed feed: RSSFeed) -> [Link] {
-    guard
-      let author = Author(rssFeed: feed),
-      let items = feed.items
-    else { return [] }
+    guard let author = Author(rssFeed: feed),
+          let items = feed.items
+      else { return [] }
 
     let decode: (RSSFeedItem) -> Link? = { Link(rssFeedItem: $0, author: author) }
 
     return items.flatMap(decode)
   }
-}
 
-// /Users/nayzak/Library/Safari/WebFeedSources.plist
+  private static func decode(atomFeed feed: AtomFeed) -> [Link] {
+    guard let author = Author(atomFeed: feed),
+          let items = feed.entries
+      else { return [] }
+
+    let decode: (AtomFeedEntry) -> Link? = { Link(atomFeedEntry: $0, author: author) }
+
+    return items.flatMap(decode)
+  }
+}
