@@ -25,6 +25,8 @@ class LinksService {
   }
 
   func updateLinks() {
+    if let notUpdating = updateLinksDisposable?.isDisposed, notUpdating == false { return }
+
     backgroundQueue.async { [unowned self] in
       let twiterFeed = self.twitterDataSource.homeTimeline().suppressError(logging: true)
       let rssFeed = self.rssDataSource.feed().suppressError(logging: true)
