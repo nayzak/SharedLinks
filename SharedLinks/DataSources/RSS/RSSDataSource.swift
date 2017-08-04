@@ -31,7 +31,7 @@ class RSSDataSource {
     func feed(_ url: URL) -> Signal<[Link], RSSDataSourceError> {
       return FeedParser.reactive.feed(at: url)
         .mapError(RSSDataSourceError.init)
-        .map(RSSDataSource.decode)
+        .map { RSSDataSource.decode(parceResult: $0, feedURL: url) }
     }
 
     func combine(_ signals: [Signal<[Link], RSSDataSourceError>]) -> Signal<[Link], RSSDataSourceError> {
@@ -76,16 +76,16 @@ class RSSDataSource {
       .addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)
   }
 
-  private static func decode(parceResult result: FeedParserResult) -> [Link] {
+  private static func decode(parceResult result: FeedParserResult, feedURL: URL) -> [Link] {
     switch (result) {
     case .atom(let feed): return RSSDataSource.decode(atomFeed: feed)
-    case .rss(let feed): return RSSDataSource.decode(rssFeed: feed)
+    case .rss(let feed): return RSSDataSource.decode(rssFeed: feed, feedURL: feedURL)
     case .json: return []
     }
   }
 
-  private static func decode(rssFeed feed: RSSFeed) -> [Link] {
-    guard let author = Author(rssFeed: feed),
+  private static func decode(rssFeed feed: RSSFeed, feedURL: URL) -> [Link] {
+    guard let author = Author(rssFeed: feed, feedURL: feedURL),
           let items = feed.items
       else { return [] }
 

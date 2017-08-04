@@ -12,11 +12,14 @@ import SwifterMac
 extension Author {
 
   init?(tweetUser json: SwifterMac.JSON) {
-    guard let name = json["name"].string else { return nil}
+    guard let name = json["name"].string,
+          let userId = json["id_str"].string
+      else { return nil }
 
-    self.name = name
-    self.avatar = json["profile_image_url_https"].string
+    let avatar = json["profile_image_url_https"].string
       .flatMap { $0.replacingOccurrences(of: "_normal", with: "") }
       .flatMap(URL.init(string:))
+
+    self.init(feedType: .twitter, idInFeed: userId, name: name, avatar: avatar)
   }
 }

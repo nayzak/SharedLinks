@@ -36,6 +36,7 @@
 		F5B607BE1F34739A00D137D4 /* CryptoSwift.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5B607BB1F34738500D137D4 /* CryptoSwift.framework.dSYM */; };
 		F5B607BF1F3473A100D137D4 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5B607BA1F34738500D137D4 /* CryptoSwift.framework */; };
 		F5B607C01F3473A100D137D4 /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5B607BA1F34738500D137D4 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F5B607C21F3473EC00D137D4 /* FeedType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B607C11F3473EC00D137D4 /* FeedType.swift */; };
 		F5E3BC691F29E6A5007E5AD6 /* SwifterMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */; };
 		F5E3BC6A1F29E6A5007E5AD6 /* SwifterMac.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F5E3BC711F29E747007E5AD6 /* SwifterMac.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5E3BC701F29E747007E5AD6 /* SwifterMac.framework.dSYM */; };
@@ -120,6 +121,7 @@
 		F5B607B81F342D9E00D137D4 /* Link+AtomFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Link+AtomFeed.swift"; sourceTree = "<group>"; };
 		F5B607BA1F34738500D137D4 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/Mac/CryptoSwift.framework; sourceTree = "<group>"; };
 		F5B607BB1F34738500D137D4 /* CryptoSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = CryptoSwift.framework.dSYM; path = Carthage/Build/Mac/CryptoSwift.framework.dSYM; sourceTree = "<group>"; };
+		F5B607C11F3473EC00D137D4 /* FeedType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedType.swift; sourceTree = "<group>"; };
 		F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwifterMac.framework; path = Carthage/Build/Mac/SwifterMac.framework; sourceTree = "<group>"; };
 		F5E3BC701F29E747007E5AD6 /* SwifterMac.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwifterMac.framework.dSYM; path = Carthage/Build/Mac/SwifterMac.framework.dSYM; sourceTree = "<group>"; };
 		F5E3BC721F29ED3C007E5AD6 /* Bond.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bond.framework; path = Carthage/Build/Mac/Bond.framework; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 			children = (
 				F5E3BC841F29EE1B007E5AD6 /* Link.swift */,
 				F569772D1F2B681B00DCFD7B /* Author.swift */,
+				F5B607C11F3473EC00D137D4 /* FeedType.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				F51307351F2C994300FB082A /* main.swift in Sources */,
 				F5A831591F31B5190027D24F /* Author+RSSFeed.swift in Sources */,
 				F5E3BC9D1F29F54D007E5AD6 /* TwitterDataSource.swift in Sources */,
+				F5B607C21F3473EC00D137D4 /* FeedType.swift in Sources */,
 				F5A831571F31B1C00027D24F /* RSSDataSource.swift in Sources */,
 				F5E3BC971F29F362007E5AD6 /* LinksListViewController.swift in Sources */,
 				F5E3BC871F29EEDD007E5AD6 /* LinksService.swift in Sources */,

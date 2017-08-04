@@ -12,9 +12,14 @@ import FeedKit
 extension Author {
 
   init?(atomFeed feed: AtomFeed) {
-    guard let name = feed.title else { return nil }
 
-    self.name = name
-    self.avatar = (feed.logo ?? feed.icon).flatMap(URL.init(string:))
+    guard let links = feed.links?.flatMap({ $0.attributes }),
+          let feedURL = links.first(where: { $0.rel != nil && $0.rel! == "self" })?.href,
+          let name = feed.title
+      else { return nil }
+
+    let avatar = (feed.logo ?? feed.icon).flatMap(URL.init(string:))
+
+    self.init(feedType: .atom, idInFeed: feedURL, name: name, avatar: avatar)
   }
 }

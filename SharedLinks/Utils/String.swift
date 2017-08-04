@@ -13,6 +13,10 @@ extension String {
   var trimmed: String {
     return trimmingCharacters(in: .whitespacesAndNewlines)
   }
+
+  var isEmptyOrWhitespace: Bool {
+    return trimmed.isEmpty
+  }
   
   var removingHtmlTags: String {
     

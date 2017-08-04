@@ -11,10 +11,10 @@ import FeedKit
 
 extension Author {
 
-  init?(rssFeed feed: RSSFeed) {
+  init?(rssFeed feed: RSSFeed, feedURL: URL) {
     guard let name = feed.title else { return nil }
-
-    self.name = name
-    self.avatar = feed.image?.url.flatMap(URL.init(string:))
+    
+    let avatar = feed.image?.url.flatMap(URL.init(string:))
+    self.init(feedType: .rss, idInFeed: feedURL.absoluteString, name: name, avatar: avatar)
   }
 }
