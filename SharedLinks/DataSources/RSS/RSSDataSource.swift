@@ -37,8 +37,10 @@ class RSSDataSource {
     func combine(_ signals: [Signal<[Link], RSSDataSourceError>]) -> Signal<[Link], RSSDataSourceError> {
       return combineLatest(signals) { $0.reduce([], +) }
     }
-    
-    return combine(safariWebFeedSources.map(feed))
+
+    return safariWebFeedSources
+      .flatMap(feed)
+      .flatMapLatest(combine)
   }
 
   private struct SafariWebFeedSource {
@@ -51,21 +53,27 @@ class RSSDataSource {
         else { return nil }
       self.url = url
     }
+
+    static func decode(_ items: [[String:Any?]]) -> [SafariWebFeedSource] {
+      return items.flatMap(SafariWebFeedSource.init)
+    }
   }
   
-  private var safariWebFeedSources: [URL] {
-    let webFeedSourcesPath = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true)
+  private var safariWebFeedSources: SafeSignal<[URL]> {
+    guard let path = safariWebFeedSourcesPath else { return .just([]) }
+
+    return NSArray.reactive.array(withContentsOfFile: path)
+      .flatMap { $0 as? [[String : Any?]] }
+      .replaceNil(with: [])
+      .flatMap(SafariWebFeedSource.decode)
+      .flatMap { $0.url }
+  }
+
+  private var safariWebFeedSourcesPath: String? {
+    return NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true)
       .first?
       .appending("/Safari/WebFeedSources.plist")
       .addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)
-    guard
-      let path = webFeedSourcesPath,
-      let rawFeedSources = NSArray(contentsOfFile: path) as? [[String:Any?]]
-    else { return [] }
-
-    return rawFeedSources
-      .flatMap(SafariWebFeedSource.init)
-      .map { $0.url }
   }
 
   private static func decode(parceResult result: FeedParserResult) -> [Link] {
