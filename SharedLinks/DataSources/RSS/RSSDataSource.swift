@@ -37,8 +37,10 @@ class RSSDataSource {
     func combine(_ signals: [Signal<[Link], RSSDataSourceError>]) -> Signal<[Link], RSSDataSourceError> {
       return combineLatest(signals) { $0.reduce([], +) }
     }
-    
-    return combine(safariWebFeedSources.map(feed))
+
+    return safariWebFeedSources
+      .flatMap(feed)
+      .flatMapLatest(combine)
   }
 
   private struct SafariWebFeedSource {
@@ -51,41 +53,54 @@ class RSSDataSource {
         else { return nil }
       self.url = url
     }
+
+    static func decode(_ items: [[String:Any?]]) -> [SafariWebFeedSource] {
+      return items.flatMap(SafariWebFeedSource.init)
+    }
   }
   
-  private var safariWebFeedSources: [URL] {
-    let webFeedSourcesPath = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true)
+  private var safariWebFeedSources: SafeSignal<[URL]> {
+    guard let path = safariWebFeedSourcesPath else { return .just([]) }
+
+    return NSArray.reactive.array(withContentsOfFile: path)
+      .flatMap { $0 as? [[String : Any?]] }
+      .replaceNil(with: [])
+      .flatMap(SafariWebFeedSource.decode)
+      .flatMap { $0.url }
+  }
+
+  private var safariWebFeedSourcesPath: String? {
+    return NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true)
       .first?
       .appending("/Safari/WebFeedSources.plist")
       .addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)
-    guard
-      let path = webFeedSourcesPath,
-      let rawFeedSources = NSArray(contentsOfFile: path) as? [[String:Any?]]
-    else { return [] }
-
-    return rawFeedSources
-      .flatMap(SafariWebFeedSource.init)
-      .map { $0.url }
   }
 
   private static func decode(parceResult result: FeedParserResult) -> [Link] {
     switch (result) {
-    case .atom: return []
+    case .atom(let feed): return RSSDataSource.decode(atomFeed: feed)
     case .rss(let feed): return RSSDataSource.decode(rssFeed: feed)
     case .json: return []
     }
   }
 
   private static func decode(rssFeed feed: RSSFeed) -> [Link] {
-    guard
-      let author = Author(rssFeed: feed),
-      let items = feed.items
-    else { return [] }
+    guard let author = Author(rssFeed: feed),
+          let items = feed.items
+      else { return [] }
 
     let decode: (RSSFeedItem) -> Link? = { Link(rssFeedItem: $0, author: author) }
 
     return items.flatMap(decode)
   }
-}
 
-// /Users/nayzak/Library/Safari/WebFeedSources.plist
+  private static func decode(atomFeed feed: AtomFeed) -> [Link] {
+    guard let author = Author(atomFeed: feed),
+          let items = feed.entries
+      else { return [] }
+
+    let decode: (AtomFeedEntry) -> Link? = { Link(atomFeedEntry: $0, author: author) }
+
+    return items.flatMap(decode)
+  }
+}

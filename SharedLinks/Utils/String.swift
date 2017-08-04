@@ -10,10 +10,14 @@ import Foundation
 
 extension String {
 
+  var trimmed: String {
+    return trimmingCharacters(in: .whitespacesAndNewlines)
+  }
+  
   var removingHtmlTags: String {
     
     let withoutTags = self.replacingOccurrences(
-      of: "<[^>]*>",
+      of: "(<script[^>]*.+</script>)|(<[^>]*>)",
       with: "",
       options: .regularExpression,
       range: self.startIndex ..< self.endIndex
@@ -26,6 +30,6 @@ extension String {
       range: withoutTags.startIndex ..< withoutTags.endIndex
     )
     
-    return withoutTagsAndDublicatedSpaces
+    return withoutTagsAndDublicatedSpaces.trimmed
   }
 }
