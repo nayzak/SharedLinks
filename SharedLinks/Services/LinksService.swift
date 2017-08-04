@@ -17,6 +17,7 @@ class LinksService {
   private let rssDataSource = RSSDataSource()
   private let linksSubject = Property<[Link]>([])
   private var updateLinksDisposable: Disposable?
+  private let backgroundQueue = DispatchQueue.global(qos: .background)
 
   init() {
     self.links = self.linksSubject.toSignal()
@@ -24,11 +25,13 @@ class LinksService {
   }
 
   func updateLinks() {
-    let twiterFeed = twitterDataSource.homeTimeline().suppressError(logging: true)
-    let rssFeed = rssDataSource.feed().suppressError(logging: true)
-    let feed = combineLatest(twiterFeed, rssFeed, combine: +).map(LinksService.sort)
-    updateLinksDisposable?.dispose()
-    updateLinksDisposable = feed.bind(to: linksSubject)
+    backgroundQueue.async { [unowned self] in
+      let twiterFeed = self.twitterDataSource.homeTimeline().suppressError(logging: true)
+      let rssFeed = self.rssDataSource.feed().suppressError(logging: true)
+      let feed = combineLatest(twiterFeed, rssFeed, combine: +).map(LinksService.sort)
+      self.updateLinksDisposable?.dispose()
+      self.updateLinksDisposable = feed.bind(to: self.linksSubject)
+    }
   }
 
   private static func sort(_ links: [Link]) -> [Link] {
