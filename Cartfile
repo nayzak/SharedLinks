@@ -3,3 +3,4 @@ github "ReactiveKit/ReactiveKit" ~> 3.0
 github "ReactiveKit/Bond" ~> 6.0
 github "rs/SDWebImage" ~> 4.0
 github "nmdias/FeedKit" ~> 6.0
+github "krzyzanowskim/CryptoSwift" ~> 0.6

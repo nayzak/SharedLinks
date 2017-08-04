@@ -31,6 +31,11 @@
 		F5B607B51F3423D700D137D4 /* NSArray+ReactiveKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B607B41F3423D700D137D4 /* NSArray+ReactiveKit.swift */; };
 		F5B607B71F342D3700D137D4 /* Author+AtomFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B607B61F342D3700D137D4 /* Author+AtomFeed.swift */; };
 		F5B607B91F342D9E00D137D4 /* Link+AtomFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B607B81F342D9E00D137D4 /* Link+AtomFeed.swift */; };
+		F5B607BC1F34738500D137D4 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5B607BA1F34738500D137D4 /* CryptoSwift.framework */; };
+		F5B607BD1F34738500D137D4 /* CryptoSwift.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = F5B607BB1F34738500D137D4 /* CryptoSwift.framework.dSYM */; };
+		F5B607BE1F34739A00D137D4 /* CryptoSwift.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5B607BB1F34738500D137D4 /* CryptoSwift.framework.dSYM */; };
+		F5B607BF1F3473A100D137D4 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5B607BA1F34738500D137D4 /* CryptoSwift.framework */; };
+		F5B607C01F3473A100D137D4 /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5B607BA1F34738500D137D4 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F5E3BC691F29E6A5007E5AD6 /* SwifterMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */; };
 		F5E3BC6A1F29E6A5007E5AD6 /* SwifterMac.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F5E3BC711F29E747007E5AD6 /* SwifterMac.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5E3BC701F29E747007E5AD6 /* SwifterMac.framework.dSYM */; };
@@ -60,6 +65,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				F5B607C01F3473A100D137D4 /* CryptoSwift.framework in Embed Frameworks */,
 				F56977281F2B485900DCFD7B /* SDWebImage.framework in Embed Frameworks */,
 				F5E3BC7A1F29ED3C007E5AD6 /* ReactiveKit.framework in Embed Frameworks */,
 				F5E3BC6A1F29E6A5007E5AD6 /* SwifterMac.framework in Embed Frameworks */,
@@ -76,6 +82,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				F5B607BE1F34739A00D137D4 /* CryptoSwift.framework.dSYM in CopyFiles */,
 				F5A831531F31B1110027D24F /* FeedKit.framework.dSYM in CopyFiles */,
 				F5E3BC711F29E747007E5AD6 /* SwifterMac.framework.dSYM in CopyFiles */,
 				F5E3BC7E1F29ED53007E5AD6 /* Bond.framework.dSYM in CopyFiles */,
@@ -111,6 +118,8 @@
 		F5B607B41F3423D700D137D4 /* NSArray+ReactiveKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSArray+ReactiveKit.swift"; sourceTree = "<group>"; };
 		F5B607B61F342D3700D137D4 /* Author+AtomFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Author+AtomFeed.swift"; sourceTree = "<group>"; };
 		F5B607B81F342D9E00D137D4 /* Link+AtomFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Link+AtomFeed.swift"; sourceTree = "<group>"; };
+		F5B607BA1F34738500D137D4 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/Mac/CryptoSwift.framework; sourceTree = "<group>"; };
+		F5B607BB1F34738500D137D4 /* CryptoSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = CryptoSwift.framework.dSYM; path = Carthage/Build/Mac/CryptoSwift.framework.dSYM; sourceTree = "<group>"; };
 		F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwifterMac.framework; path = Carthage/Build/Mac/SwifterMac.framework; sourceTree = "<group>"; };
 		F5E3BC701F29E747007E5AD6 /* SwifterMac.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwifterMac.framework.dSYM; path = Carthage/Build/Mac/SwifterMac.framework.dSYM; sourceTree = "<group>"; };
 		F5E3BC721F29ED3C007E5AD6 /* Bond.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bond.framework; path = Carthage/Build/Mac/Bond.framework; sourceTree = "<group>"; };
@@ -134,12 +143,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5B607BC1F34738500D137D4 /* CryptoSwift.framework in Frameworks */,
 				F56977271F2B485900DCFD7B /* SDWebImage.framework in Frameworks */,
 				F5E3BC791F29ED3C007E5AD6 /* ReactiveKit.framework in Frameworks */,
 				F5E3BC691F29E6A5007E5AD6 /* SwifterMac.framework in Frameworks */,
 				F5E3BC771F29ED3C007E5AD6 /* Diff.framework in Frameworks */,
 				F5E3BC751F29ED3C007E5AD6 /* Bond.framework in Frameworks */,
 				F5A831501F31B1000027D24F /* FeedKit.framework in Frameworks */,
+				F5B607BF1F3473A100D137D4 /* CryptoSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,12 +232,14 @@
 		F5E3BC621F29E4D1007E5AD6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F5B607BA1F34738500D137D4 /* CryptoSwift.framework */,
 				F5A8314F1F31B1000027D24F /* FeedKit.framework */,
 				F56977261F2B485900DCFD7B /* SDWebImage.framework */,
 				F5E3BC721F29ED3C007E5AD6 /* Bond.framework */,
 				F5E3BC731F29ED3C007E5AD6 /* Diff.framework */,
 				F5E3BC741F29ED3C007E5AD6 /* ReactiveKit.framework */,
 				F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */,
+				F5B607BB1F34738500D137D4 /* CryptoSwift.framework.dSYM */,
 				F5A831521F31B1110027D24F /* FeedKit.framework.dSYM */,
 				F56977291F2B486E00DCFD7B /* SDWebImage.framework.dSYM */,
 				F5E3BC701F29E747007E5AD6 /* SwifterMac.framework.dSYM */,
@@ -366,6 +379,7 @@
 			files = (
 				F56977221F2B2FC700DCFD7B /* LinkTableCellView.xib in Resources */,
 				F5E3BC931F29F362007E5AD6 /* Assets.xcassets in Resources */,
+				F5B607BD1F34738500D137D4 /* CryptoSwift.framework.dSYM in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
