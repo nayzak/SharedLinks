@@ -10,6 +10,8 @@
 		F51307311F2C770800FB082A /* LinksTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51307301F2C770800FB082A /* LinksTableView.swift */; };
 		F51307351F2C994300FB082A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51307341F2C994300FB082A /* main.swift */; };
 		F52955D91F29FD6E00CFAF30 /* Swifter+ReactiveKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52955D81F29FD6E00CFAF30 /* Swifter+ReactiveKit.swift */; };
+		F53142221F81103100ACF226 /* Differ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F53142201F81100F00ACF226 /* Differ.framework */; };
+		F53142231F81103100ACF226 /* Differ.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F53142201F81100F00ACF226 /* Differ.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F569771E1F2B2C3B00DCFD7B /* LinkTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F569771D1F2B2C3B00DCFD7B /* LinkTableCellView.swift */; };
 		F56977221F2B2FC700DCFD7B /* LinkTableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F56977211F2B2FC700DCFD7B /* LinkTableCellView.xib */; };
 		F56977251F2B377B00DCFD7B /* NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56977241F2B377B00DCFD7B /* NSAttributedString.swift */; };
@@ -42,12 +44,9 @@
 		F5E3BC711F29E747007E5AD6 /* SwifterMac.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5E3BC701F29E747007E5AD6 /* SwifterMac.framework.dSYM */; };
 		F5E3BC751F29ED3C007E5AD6 /* Bond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC721F29ED3C007E5AD6 /* Bond.framework */; };
 		F5E3BC761F29ED3C007E5AD6 /* Bond.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC721F29ED3C007E5AD6 /* Bond.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F5E3BC771F29ED3C007E5AD6 /* Diff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC731F29ED3C007E5AD6 /* Diff.framework */; };
-		F5E3BC781F29ED3C007E5AD6 /* Diff.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC731F29ED3C007E5AD6 /* Diff.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F5E3BC791F29ED3C007E5AD6 /* ReactiveKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC741F29ED3C007E5AD6 /* ReactiveKit.framework */; };
 		F5E3BC7A1F29ED3C007E5AD6 /* ReactiveKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC741F29ED3C007E5AD6 /* ReactiveKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F5E3BC7E1F29ED53007E5AD6 /* Bond.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5E3BC7B1F29ED53007E5AD6 /* Bond.framework.dSYM */; };
-		F5E3BC7F1F29ED53007E5AD6 /* Diff.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5E3BC7C1F29ED53007E5AD6 /* Diff.framework.dSYM */; };
 		F5E3BC801F29ED53007E5AD6 /* ReactiveKit.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5E3BC7D1F29ED53007E5AD6 /* ReactiveKit.framework.dSYM */; };
 		F5E3BC851F29EE1B007E5AD6 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E3BC841F29EE1B007E5AD6 /* Link.swift */; };
 		F5E3BC871F29EEDD007E5AD6 /* LinksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E3BC861F29EEDD007E5AD6 /* LinksService.swift */; };
@@ -70,7 +69,7 @@
 				F56977281F2B485900DCFD7B /* SDWebImage.framework in Embed Frameworks */,
 				F5E3BC7A1F29ED3C007E5AD6 /* ReactiveKit.framework in Embed Frameworks */,
 				F5E3BC6A1F29E6A5007E5AD6 /* SwifterMac.framework in Embed Frameworks */,
-				F5E3BC781F29ED3C007E5AD6 /* Diff.framework in Embed Frameworks */,
+				F53142231F81103100ACF226 /* Differ.framework in Embed Frameworks */,
 				F5E3BC761F29ED3C007E5AD6 /* Bond.framework in Embed Frameworks */,
 				F5A831511F31B1000027D24F /* FeedKit.framework in Embed Frameworks */,
 			);
@@ -87,7 +86,6 @@
 				F5A831531F31B1110027D24F /* FeedKit.framework.dSYM in CopyFiles */,
 				F5E3BC711F29E747007E5AD6 /* SwifterMac.framework.dSYM in CopyFiles */,
 				F5E3BC7E1F29ED53007E5AD6 /* Bond.framework.dSYM in CopyFiles */,
-				F5E3BC7F1F29ED53007E5AD6 /* Diff.framework.dSYM in CopyFiles */,
 				F5E3BC801F29ED53007E5AD6 /* ReactiveKit.framework.dSYM in CopyFiles */,
 				F569772A1F2B486E00DCFD7B /* SDWebImage.framework.dSYM in CopyFiles */,
 			);
@@ -100,6 +98,8 @@
 		F51307341F2C994300FB082A /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		F516013C1F29CFE900555876 /* SharedLinks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharedLinks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F52955D81F29FD6E00CFAF30 /* Swifter+ReactiveKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Swifter+ReactiveKit.swift"; sourceTree = "<group>"; };
+		F53142201F81100F00ACF226 /* Differ.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differ.framework; path = Carthage/Build/Mac/Differ.framework; sourceTree = "<group>"; };
+		F53142211F81101B00ACF226 /* Differ.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Differ.framework.dSYM; path = Carthage/Build/Mac/Differ.framework.dSYM; sourceTree = "<group>"; };
 		F569771D1F2B2C3B00DCFD7B /* LinkTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkTableCellView.swift; sourceTree = "<group>"; };
 		F56977211F2B2FC700DCFD7B /* LinkTableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LinkTableCellView.xib; sourceTree = "<group>"; };
 		F56977241F2B377B00DCFD7B /* NSAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAttributedString.swift; sourceTree = "<group>"; };
@@ -125,10 +125,8 @@
 		F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwifterMac.framework; path = Carthage/Build/Mac/SwifterMac.framework; sourceTree = "<group>"; };
 		F5E3BC701F29E747007E5AD6 /* SwifterMac.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwifterMac.framework.dSYM; path = Carthage/Build/Mac/SwifterMac.framework.dSYM; sourceTree = "<group>"; };
 		F5E3BC721F29ED3C007E5AD6 /* Bond.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bond.framework; path = Carthage/Build/Mac/Bond.framework; sourceTree = "<group>"; };
-		F5E3BC731F29ED3C007E5AD6 /* Diff.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Diff.framework; path = Carthage/Build/Mac/Diff.framework; sourceTree = "<group>"; };
 		F5E3BC741F29ED3C007E5AD6 /* ReactiveKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveKit.framework; path = Carthage/Build/Mac/ReactiveKit.framework; sourceTree = "<group>"; };
 		F5E3BC7B1F29ED53007E5AD6 /* Bond.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Bond.framework.dSYM; path = Carthage/Build/Mac/Bond.framework.dSYM; sourceTree = "<group>"; };
-		F5E3BC7C1F29ED53007E5AD6 /* Diff.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Diff.framework.dSYM; path = Carthage/Build/Mac/Diff.framework.dSYM; sourceTree = "<group>"; };
 		F5E3BC7D1F29ED53007E5AD6 /* ReactiveKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ReactiveKit.framework.dSYM; path = Carthage/Build/Mac/ReactiveKit.framework.dSYM; sourceTree = "<group>"; };
 		F5E3BC841F29EE1B007E5AD6 /* Link.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
 		F5E3BC861F29EEDD007E5AD6 /* LinksService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinksService.swift; sourceTree = "<group>"; };
@@ -149,7 +147,7 @@
 				F56977271F2B485900DCFD7B /* SDWebImage.framework in Frameworks */,
 				F5E3BC791F29ED3C007E5AD6 /* ReactiveKit.framework in Frameworks */,
 				F5E3BC691F29E6A5007E5AD6 /* SwifterMac.framework in Frameworks */,
-				F5E3BC771F29ED3C007E5AD6 /* Diff.framework in Frameworks */,
+				F53142221F81103100ACF226 /* Differ.framework in Frameworks */,
 				F5E3BC751F29ED3C007E5AD6 /* Bond.framework in Frameworks */,
 				F5A831501F31B1000027D24F /* FeedKit.framework in Frameworks */,
 				F5B607BF1F3473A100D137D4 /* CryptoSwift.framework in Frameworks */,
@@ -166,7 +164,9 @@
 				F516013D1F29CFE900555876 /* Products */,
 				F5E3BC621F29E4D1007E5AD6 /* Frameworks */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		F516013D1F29CFE900555876 /* Products */ = {
 			isa = PBXGroup;
@@ -234,19 +234,19 @@
 		F5E3BC621F29E4D1007E5AD6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F53142201F81100F00ACF226 /* Differ.framework */,
 				F5B607BA1F34738500D137D4 /* CryptoSwift.framework */,
 				F5A8314F1F31B1000027D24F /* FeedKit.framework */,
 				F56977261F2B485900DCFD7B /* SDWebImage.framework */,
 				F5E3BC721F29ED3C007E5AD6 /* Bond.framework */,
-				F5E3BC731F29ED3C007E5AD6 /* Diff.framework */,
 				F5E3BC741F29ED3C007E5AD6 /* ReactiveKit.framework */,
 				F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */,
+				F53142211F81101B00ACF226 /* Differ.framework.dSYM */,
 				F5B607BB1F34738500D137D4 /* CryptoSwift.framework.dSYM */,
 				F5A831521F31B1110027D24F /* FeedKit.framework.dSYM */,
 				F56977291F2B486E00DCFD7B /* SDWebImage.framework.dSYM */,
 				F5E3BC701F29E747007E5AD6 /* SwifterMac.framework.dSYM */,
 				F5E3BC7B1F29ED53007E5AD6 /* Bond.framework.dSYM */,
-				F5E3BC7C1F29ED53007E5AD6 /* Diff.framework.dSYM */,
 				F5E3BC7D1F29ED53007E5AD6 /* ReactiveKit.framework.dSYM */,
 			);
 			name = Frameworks;
@@ -353,6 +353,7 @@
 				TargetAttributes = {
 					F516013B1F29CFE900555876 = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -529,7 +530,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nayzak.shared-links";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -546,7 +548,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nayzak.shared-links";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

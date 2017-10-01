@@ -63,13 +63,13 @@ class TwitterDataSource {
 
         if disposable.isDisposed { return }
 
-        if let error = error {
-          observer.failed(.init(error: error))
-          return
+        if (!granted) {
+            observer.failed(.noAccountsAccess)
+            return
         }
 
-        if (!granted) {
-          observer.failed(.noAccountsAccess)
+        if let error = error {
+          observer.failed(.init(error: error))
           return
         }
 

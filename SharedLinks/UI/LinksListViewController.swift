@@ -26,7 +26,7 @@ class LinksListViewController: NSViewController {
       v.hasVerticalScroller = true
       v.hasHorizontalScroller = false
       v.drawsBackground = false
-      v.autoresizingMask = [.viewWidthSizable, .viewHeightSizable]
+      v.autoresizingMask = [.width, .height]
     }
 
     view = NSView().apply { v in
@@ -46,7 +46,7 @@ class LinksListViewController: NSViewController {
   }
 
   private func open(url: URL) {
-    NSWorkspace.shared().open(url)
+    NSWorkspace.shared.open(url)
   }
   
   private func makeBindings() {

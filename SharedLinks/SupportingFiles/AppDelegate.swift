@@ -21,14 +21,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       $0.animates = false
     }
 
-    menuBarItem = NSStatusBar.system().statusItem(withLength: NSSquareStatusItemLength).apply {
+    menuBarItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength).apply {
       $0.button?.apply {
         $0.image = #imageLiteral(resourceName: "menu-bar-icon")
         $0.action = #selector(togglePopover(_:))
       }
     }
 
-    let mask: NSEventMask = [.leftMouseDown, .rightMouseDown]
+    let mask: NSEvent.EventTypeMask = [.leftMouseDown, .rightMouseDown]
     clickOutsidePopoverEventMonitor = GlobalEventMonitor(mask: mask) { [unowned self] _ in
       guard self.popover.isShown else { return }
       self.closePopover()

@@ -9,6 +9,6 @@
 import Cocoa
 
 let appDelegate = AppDelegate()
-NSApplication.shared().delegate = appDelegate
+NSApplication.shared.delegate = appDelegate
 
 let _ = NSApplicationMain(CommandLine.argc, CommandLine.unsafeArgv)

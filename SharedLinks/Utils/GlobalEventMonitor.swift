@@ -14,10 +14,10 @@ class GlobalEventMonitor {
   typealias Handler = (NSEvent?) -> Void
   
   private var monitor: Any?
-  private let mask: NSEventMask
+  private let mask: NSEvent.EventTypeMask
   private let handler: Handler
 
-  public init(mask: NSEventMask, handler: @escaping Handler) {
+  public init(mask: NSEvent.EventTypeMask, handler: @escaping Handler) {
     self.mask = mask
     self.handler = handler
   }

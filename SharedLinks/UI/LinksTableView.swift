@@ -50,13 +50,13 @@ class LinksTableView: NSTableView {
     intercellSpacing = .zero
     selectionHighlightStyle = .none
     
-    let column = NSTableColumn(identifier: "Links")
+    let column = NSTableColumn(identifier: NSUserInterfaceItemIdentifier(rawValue: "Links"))
     addTableColumn(column)
     headerView = nil
 
-    let cellID = Cell.identifier
-    let nib = NSNib(nibNamed: cellID, bundle: nil)
-    register(nib, forIdentifier: cellID)
+    let cellID = Cell.identifier.rawValue
+    let nib = NSNib(nibNamed: NSNib.Name(rawValue: cellID), bundle: nil)
+    register(nib, forIdentifier: NSUserInterfaceItemIdentifier(rawValue: cellID))
   }
 
   override func layout() {
@@ -85,7 +85,7 @@ extension LinksTableView {
         Cell.rowHeight(forWidth: view.bounds.width, using: items[row])
       },
       createCell: { _, _, view  in
-        view.make(withIdentifier: Cell.identifier, owner: nil)
+        view.makeView(withIdentifier: Cell.identifier, owner: nil)
       }
     )
 

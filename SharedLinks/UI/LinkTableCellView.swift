@@ -57,24 +57,24 @@ extension LinkTableCellView {
 
     if (!model.title.isEmpty) {
       let title = NSAttributedString(string: model.title, attributes: [
-        NSFontAttributeName: NSFont.boldSystemFont(ofSize: 13),
-        NSForegroundColorAttributeName: NSColor(calibratedWhite: 51 / 255.0, alpha: 1)
+        .font: NSFont.boldSystemFont(ofSize: 13),
+        .foregroundColor: NSColor(calibratedWhite: 51 / 255.0, alpha: 1)
       ])
       paragraphs.append(title)
     }
 
     if let subtitleString = model.subtitle, !subtitleString.isEmpty {
       let subtitle = NSAttributedString(string: subtitleString, attributes: [
-        NSFontAttributeName: NSFont.systemFont(ofSize: 12),
-        NSForegroundColorAttributeName: NSColor(calibratedWhite: 51 / 255.0, alpha: 1)
+        .font: NSFont.systemFont(ofSize: 12),
+        .foregroundColor: NSColor(calibratedWhite: 51 / 255.0, alpha: 1)
       ])
       paragraphs.append(subtitle)
     }
 
     if (!model.text.isEmpty) {
       let text = NSAttributedString(string: model.text, attributes: [
-        NSFontAttributeName: NSFont.systemFont(ofSize: 12),
-        NSForegroundColorAttributeName: NSColor(calibratedWhite: 76 / 255.0, alpha: 1)
+        .font: NSFont.systemFont(ofSize: 12),
+        .foregroundColor: NSColor(calibratedWhite: 76 / 255.0, alpha: 1)
       ])
       paragraphs.append(text)
     }
@@ -102,7 +102,7 @@ extension LinkTableCellView {
 
 extension LinkTableCellView {
 
-  static let identifier = "LinkTableCellView"
+  static let identifier = NSUserInterfaceItemIdentifier(rawValue: "LinkTableCellView")
 
   static func rowHeight(forWidth cellWidth: CGFloat, using model: Model) -> CGFloat {
     let totalHorizontalPadding = padding.left + padding.right
@@ -121,16 +121,16 @@ extension LinkTableCellView {
   }
 
   private static let instance: LinkTableCellView = {
-    let nib = NSNib(nibNamed: identifier, bundle: nil)!
-    var nibObjects = NSArray()
+    let nib = NSNib(nibNamed: NSNib.Name(rawValue: identifier.rawValue), bundle: nil)!
+    var nibObjects: NSArray?
     nib.instantiate(withOwner: nil, topLevelObjects: &nibObjects)
-    return nibObjects
+    return nibObjects!
       .flatMap { $0 as? LinkTableCellView }
       .first!
   }()
 
-  private static var padding: EdgeInsets {
-    return EdgeInsets(
+  private static var padding: NSEdgeInsets {
+    return NSEdgeInsets(
       top: instance.topPaddingConstraint.constant,
       left: instance.leftPaddingConstraint.constant,
       bottom: instance.bottomPaddingConstraint.constant,
