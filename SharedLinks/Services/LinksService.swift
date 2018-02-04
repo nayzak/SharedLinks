@@ -28,8 +28,14 @@ class LinksService {
     if let notUpdating = updateLinksDisposable?.isDisposed, notUpdating == false { return }
 
     backgroundQueue.async { [unowned self] in
-      let twiterFeed = self.twitterDataSource.homeTimeline().suppressError(logging: true)
-      let rssFeed = self.rssDataSource.feed().suppressError(logging: true)
+      let twiterFeed = self.twitterDataSource
+        .homeTimeline()
+        .suppressError(logging: true)
+        .start(with: [])
+      let rssFeed = self.rssDataSource
+        .feed()
+        .suppressError(logging: true)
+        .start(with: [])
       let feed = combineLatest(twiterFeed, rssFeed, combine: +).map(LinksService.sort)
       self.updateLinksDisposable?.dispose()
       self.updateLinksDisposable = feed.bind(to: self.linksSubject)
