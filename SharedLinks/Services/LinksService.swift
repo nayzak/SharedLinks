@@ -28,7 +28,7 @@ class LinksService {
 
     backgroundQueue.async { [unowned self] in
       let twiterFeed = self.twitterDataSource
-        .homeTimeline()
+        .timeline()
         .suppressError(logging: true)
         .start(with: [])
       let rssFeed = self.rssDataSource

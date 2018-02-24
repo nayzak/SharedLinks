@@ -38,7 +38,7 @@ class TwitterDataSource {
     appOnly: true
   )
 
-  func homeTimeline() -> Future<[Link], TwitterDataSourceError> {
+  func timeline() -> Future<[Link], TwitterDataSourceError> {
 
     func decodeLink(_ json: JSON) -> [Link] {
       return json.array?.flatMap(Link.init(tweet:)) ?? []
