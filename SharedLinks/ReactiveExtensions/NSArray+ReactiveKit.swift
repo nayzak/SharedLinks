@@ -11,7 +11,7 @@ import ReactiveKit
 
 extension ReactiveExtensions where Base: NSArray {
 
-  static func array(withContentsOfFile path: String) -> SafeSignal<NSArray?> {
+  static func array(withContentsOfFile path: String) -> SafeFuture<NSArray?> {
     return Signal { observer in
       let disposable = SimpleDisposable()
       DispatchQueue.global(qos: .background).async {

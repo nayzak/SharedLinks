@@ -1,0 +1,17 @@
+{
+  "twitterClient": {
+    "key": "KEY",
+    "secret": "SECRET"
+  },
+  "twitterUsersToAgregateFollowingsTimeline": [
+    "@_user0",
+    "@_user1",
+  ],
+  "twitterUsersToAgregateTimeline": [
+    "@_user2",
+    "@_user3",
+  ],
+  "webFeedSourcesUrls": [
+    "https://swift.org/blog/atom.xml"
+  ]
+}

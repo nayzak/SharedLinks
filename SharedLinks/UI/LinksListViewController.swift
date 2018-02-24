@@ -19,7 +19,7 @@ class LinksListViewController: NSViewController {
 
   override func loadView() {
 
-    linksTableView = LinksTableView()
+    self.linksTableView = LinksTableView()
     
     let scrollView = NSScrollView().apply { v in
       v.documentView = linksTableView
@@ -29,7 +29,7 @@ class LinksListViewController: NSViewController {
       v.autoresizingMask = [.width, .height]
     }
 
-    view = NSView().apply { v in
+    self.view = NSView().apply { v in
       v.addSubview(scrollView)
       v.frame = NSRect(x: 0, y: 0, width: 400, height: 600)
     }
@@ -37,12 +37,12 @@ class LinksListViewController: NSViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    makeBindings()
+    self.makeBindings()
   }
 
   override func viewDidAppear() {
     super.viewDidAppear()
-    service.updateLinks()
+    self.service.updateLinks()
   }
 
   private func open(url: URL) {
@@ -52,17 +52,17 @@ class LinksListViewController: NSViewController {
   private func makeBindings() {
 
     let items = MutableObservableArray<LinkTableCellView.Model>()
-    service.links
+    self.service.links
       .flatMap(LinkTableCellView.Model.init)
       .observeNext { items.replace(with: $0, performDiff: true) }
-      .dispose(in: bag)
+      .dispose(in: self.bag)
 
     let selectedLinkIndex = SafePublishSubject<Int>()
 
     let selectedLink = selectedLinkIndex.with(latestFrom: service.links) { $1[$0] }
     selectedLink.bind(to: self) { vc, link in vc.open(url: link.url) }
-    
-    linksTableView.viewModel = LinksTableView.Model(
+
+    self.linksTableView.viewModel = LinksTableView.Model(
       items: items,
       selectItem: selectedLinkIndex.next
     )

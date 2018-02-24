@@ -20,7 +20,7 @@ class LinksTableView: NSTableView {
   }
 
   var viewModel: Model? {
-    didSet { bind(viewModel) }
+    didSet { self.bind(self.viewModel) }
   }
 
   fileprivate var lastFrame: NSRect?
@@ -31,7 +31,7 @@ class LinksTableView: NSTableView {
 
   override init(frame frameRect: NSRect) {
     super.init(frame: frameRect)
-    setup()
+    self.setup()
   }
 
   required init?(coder: NSCoder) {
@@ -40,36 +40,36 @@ class LinksTableView: NSTableView {
 
   private func setup() {
 
-    allowsColumnReordering = false
-    allowsColumnResizing = false
-    backgroundColor = .clear
-    verticalMotionCanBeginDrag = false
-    allowsMultipleSelection = false
-    allowsEmptySelection = true
-    allowsColumnSelection = false
-    intercellSpacing = .zero
-    selectionHighlightStyle = .none
+    self.allowsColumnReordering = false
+    self.allowsColumnResizing = false
+    self.backgroundColor = .clear
+    self.verticalMotionCanBeginDrag = false
+    self.allowsMultipleSelection = false
+    self.allowsEmptySelection = true
+    self.allowsColumnSelection = false
+    self.intercellSpacing = .zero
+    self.selectionHighlightStyle = .none
     
     let column = NSTableColumn(identifier: NSUserInterfaceItemIdentifier(rawValue: "Links"))
-    addTableColumn(column)
-    headerView = nil
+    self.addTableColumn(column)
+    self.headerView = nil
 
     let cellID = Cell.identifier.rawValue
     let nib = NSNib(nibNamed: NSNib.Name(rawValue: cellID), bundle: nil)
-    register(nib, forIdentifier: NSUserInterfaceItemIdentifier(rawValue: cellID))
+    self.register(nib, forIdentifier: NSUserInterfaceItemIdentifier(rawValue: cellID))
   }
 
   override func layout() {
     super.layout()
-    updateRowsHeightsIfNeeded()
+    self.updateRowsHeightsIfNeeded()
   }
-  
+
   private func updateRowsHeightsIfNeeded() {
-    if let lastWidth = lastFrame?.width, lastWidth != frame.width {
-      let indexes = IndexSet(0..<numberOfRows)
-      noteHeightOfRows(withIndexesChanged: indexes)
+    if let lastWidth = self.lastFrame?.width, lastWidth != self.frame.width {
+      let indexes = IndexSet(0..<self.numberOfRows)
+      self.noteHeightOfRows(withIndexesChanged: indexes)
     }
-    lastFrame = frame
+    self.lastFrame = self.frame
   }
 }
 
@@ -78,7 +78,7 @@ class LinksTableView: NSTableView {
 extension LinksTableView {
 
   fileprivate func bind(_ vm: Model?) {
-    guard let vm = vm else { unbindViewModel(); return }
+    guard let vm = vm else { self.unbindViewModel(); return }
 
     let bond = DefaultTableViewBond<ObservableArray<Cell.Model>>(
       measureCell: { items, row, view  in
@@ -91,7 +91,7 @@ extension LinksTableView {
 
     vm.items.bind(to: self, using: bond)
 
-    reactive.selectedRow
+    self.reactive.selectedRow
       .filter { $0 >= 0 }
       .bind(to: self) { view, row in
         vm.selectItem?(row)
@@ -100,8 +100,8 @@ extension LinksTableView {
   }
 
   private func unbindViewModel() {
-    dataSource = nil
-    delegate = nil
-    reloadData()
+    self.dataSource = nil
+    self.delegate = nil
+    self.reloadData()
   }
 }

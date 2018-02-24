@@ -36,9 +36,11 @@
 		F5B607BC1F34738500D137D4 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5B607BA1F34738500D137D4 /* CryptoSwift.framework */; };
 		F5B607BD1F34738500D137D4 /* CryptoSwift.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = F5B607BB1F34738500D137D4 /* CryptoSwift.framework.dSYM */; };
 		F5B607BE1F34739A00D137D4 /* CryptoSwift.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5B607BB1F34738500D137D4 /* CryptoSwift.framework.dSYM */; };
-		F5B607BF1F3473A100D137D4 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5B607BA1F34738500D137D4 /* CryptoSwift.framework */; };
 		F5B607C01F3473A100D137D4 /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5B607BA1F34738500D137D4 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F5B607C21F3473EC00D137D4 /* FeedType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B607C11F3473EC00D137D4 /* FeedType.swift */; };
+		F5C906F320413C7A00FF6796 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C906F220413C7A00FF6796 /* Future.swift */; };
+		F5C906F52041464900FF6796 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C906F42041464900FF6796 /* AppConfig.swift */; };
+		F5C906F7204149D500FF6796 /* DebugConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = F5C906F6204149D500FF6796 /* DebugConfig.json */; };
 		F5E3BC691F29E6A5007E5AD6 /* SwifterMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */; };
 		F5E3BC6A1F29E6A5007E5AD6 /* SwifterMac.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F5E3BC711F29E747007E5AD6 /* SwifterMac.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5E3BC701F29E747007E5AD6 /* SwifterMac.framework.dSYM */; };
@@ -122,6 +124,10 @@
 		F5B607BA1F34738500D137D4 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/Mac/CryptoSwift.framework; sourceTree = "<group>"; };
 		F5B607BB1F34738500D137D4 /* CryptoSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = CryptoSwift.framework.dSYM; path = Carthage/Build/Mac/CryptoSwift.framework.dSYM; sourceTree = "<group>"; };
 		F5B607C11F3473EC00D137D4 /* FeedType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedType.swift; sourceTree = "<group>"; };
+		F5C906F220413C7A00FF6796 /* Future.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Future.swift; sourceTree = "<group>"; };
+		F5C906F42041464900FF6796 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		F5C906F6204149D500FF6796 /* DebugConfig.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DebugConfig.json; sourceTree = "<group>"; };
+		F5C906F820414C3A00FF6796 /* DebugConfig.example.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DebugConfig.example.json; sourceTree = "<group>"; };
 		F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwifterMac.framework; path = Carthage/Build/Mac/SwifterMac.framework; sourceTree = "<group>"; };
 		F5E3BC701F29E747007E5AD6 /* SwifterMac.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwifterMac.framework.dSYM; path = Carthage/Build/Mac/SwifterMac.framework.dSYM; sourceTree = "<group>"; };
 		F5E3BC721F29ED3C007E5AD6 /* Bond.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bond.framework; path = Carthage/Build/Mac/Bond.framework; sourceTree = "<group>"; };
@@ -150,7 +156,6 @@
 				F53142221F81103100ACF226 /* Differ.framework in Frameworks */,
 				F5E3BC751F29ED3C007E5AD6 /* Bond.framework in Frameworks */,
 				F5A831501F31B1000027D24F /* FeedKit.framework in Frameworks */,
-				F5B607BF1F3473A100D137D4 /* CryptoSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				F5B607B41F3423D700D137D4 /* NSArray+ReactiveKit.swift */,
+				F5C906F220413C7A00FF6796 /* Future.swift */,
 			);
 			path = ReactiveExtensions;
 			sourceTree = "<group>";
@@ -266,6 +272,7 @@
 				F5E3BC841F29EE1B007E5AD6 /* Link.swift */,
 				F569772D1F2B681B00DCFD7B /* Author.swift */,
 				F5B607C11F3473EC00D137D4 /* FeedType.swift */,
+				F5C906F42041464900FF6796 /* AppConfig.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -274,6 +281,8 @@
 			isa = PBXGroup;
 			children = (
 				F5E3BC8C1F29F362007E5AD6 /* Assets.xcassets */,
+				F5C906F6204149D500FF6796 /* DebugConfig.json */,
+				F5C906F820414C3A00FF6796 /* DebugConfig.example.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -348,7 +357,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Ian Kazlauskas";
 				TargetAttributes = {
 					F516013B1F29CFE900555876 = {
@@ -382,6 +391,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F56977221F2B2FC700DCFD7B /* LinkTableCellView.xib in Resources */,
+				F5C906F7204149D500FF6796 /* DebugConfig.json in Resources */,
 				F5E3BC931F29F362007E5AD6 /* Assets.xcassets in Resources */,
 				F5B607BD1F34738500D137D4 /* CryptoSwift.framework.dSYM in Resources */,
 			);
@@ -396,6 +406,7 @@
 			files = (
 				F5E8721B1F2DBDAB00EB60AA /* GlobalEventMonitor.swift in Sources */,
 				F5E3BC941F29F362007E5AD6 /* AppDelegate.swift in Sources */,
+				F5C906F52041464900FF6796 /* AppConfig.swift in Sources */,
 				F5B607B51F3423D700D137D4 /* NSArray+ReactiveKit.swift in Sources */,
 				F5A8315D1F31B6D40027D24F /* String.swift in Sources */,
 				F5E3BC9F1F29F562007E5AD6 /* Link+Twitter.swift in Sources */,
@@ -408,6 +419,7 @@
 				F592223F1F33121B0090E6C3 /* FeedParser+ReactiveKit.swift in Sources */,
 				F5B607B91F342D9E00D137D4 /* Link+AtomFeed.swift in Sources */,
 				F51307311F2C770800FB082A /* LinksTableView.swift in Sources */,
+				F5C906F320413C7A00FF6796 /* Future.swift in Sources */,
 				F5E3BC851F29EE1B007E5AD6 /* Link.swift in Sources */,
 				F5A8315B1F31B5C50027D24F /* Link+RSSFeed.swift in Sources */,
 				F569772E1F2B681B00DCFD7B /* Author.swift in Sources */,
@@ -435,7 +447,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -443,7 +457,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -485,7 +503,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -493,7 +513,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

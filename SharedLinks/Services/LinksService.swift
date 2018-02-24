@@ -21,7 +21,6 @@ class LinksService {
 
   init() {
     self.links = self.linksSubject.toSignal()
-    updateLinks()
   }
 
   func updateLinks() {

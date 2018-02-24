@@ -17,7 +17,7 @@ fileprivate let FeedParserQueue = DispatchQueue.global(qos: .background)
 
 extension ReactiveExtensions where Base: FeedParser {
 
-  static func feed(at url: URL) -> Signal<FeedParserResult, FeedParserError> {
+  static func feed(at url: URL) -> Future<FeedParserResult, FeedParserError> {
 
     return Signal { observer in
 
