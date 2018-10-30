@@ -18,7 +18,7 @@ struct Author {
     let value: String
 
     init?(feedType: FeedType, idInFeed: String) {
-      guard !idInFeed.isEmptyOrWhitespace else { return nil }
+      guard idInFeed.isNotEmptyOrWhitespace else { return nil }
 
       self.feedType = feedType
       self.idInFeed = idInFeed
@@ -69,5 +69,16 @@ extension Author: Hashable {
 
   public static func ==(lhs: Author, rhs: Author) -> Bool {
     return lhs.hashValue == rhs.hashValue
+  }
+}
+
+extension FeedType {
+
+  fileprivate var prefixForIDHashing: String {
+    switch self {
+    case .twitter: return "twitter_"
+    case .rss: return "rss_"
+    case .atom: return "atom_"
+    }
   }
 }

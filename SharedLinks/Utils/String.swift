@@ -11,11 +11,15 @@ import Foundation
 extension String {
 
   var trimmed: String {
-    return trimmingCharacters(in: .whitespacesAndNewlines)
+    return self.trimmingCharacters(in: .whitespacesAndNewlines)
   }
 
   var isEmptyOrWhitespace: Bool {
-    return trimmed.isEmpty
+    return self.isEmpty || self.trimmed.isEmpty
+  }
+
+  var isNotEmptyOrWhitespace: Bool {
+    return self.isNotEmptyOrWhitespace
   }
   
   var removingHtmlTags: String {

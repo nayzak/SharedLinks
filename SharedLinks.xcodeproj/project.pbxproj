@@ -41,6 +41,8 @@
 		F5C906F320413C7A00FF6796 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C906F220413C7A00FF6796 /* Future.swift */; };
 		F5C906F52041464900FF6796 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C906F42041464900FF6796 /* AppConfig.swift */; };
 		F5C906F7204149D500FF6796 /* DebugConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = F5C906F6204149D500FF6796 /* DebugConfig.json */; };
+		F5C906FE2041A62000FF6796 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C906FD2041A62000FF6796 /* Collection.swift */; };
+		F5C907002041A6EA00FF6796 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C906FF2041A6EA00FF6796 /* Bool.swift */; };
 		F5E3BC691F29E6A5007E5AD6 /* SwifterMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */; };
 		F5E3BC6A1F29E6A5007E5AD6 /* SwifterMac.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F5E3BC711F29E747007E5AD6 /* SwifterMac.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5E3BC701F29E747007E5AD6 /* SwifterMac.framework.dSYM */; };
@@ -128,6 +130,8 @@
 		F5C906F42041464900FF6796 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		F5C906F6204149D500FF6796 /* DebugConfig.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DebugConfig.json; sourceTree = "<group>"; };
 		F5C906F820414C3A00FF6796 /* DebugConfig.example.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DebugConfig.example.json; sourceTree = "<group>"; };
+		F5C906FD2041A62000FF6796 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		F5C906FF2041A6EA00FF6796 /* Bool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
 		F5E3BC631F29E4D1007E5AD6 /* SwifterMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwifterMac.framework; path = Carthage/Build/Mac/SwifterMac.framework; sourceTree = "<group>"; };
 		F5E3BC701F29E747007E5AD6 /* SwifterMac.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwifterMac.framework.dSYM; path = Carthage/Build/Mac/SwifterMac.framework.dSYM; sourceTree = "<group>"; };
 		F5E3BC721F29ED3C007E5AD6 /* Bond.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bond.framework; path = Carthage/Build/Mac/Bond.framework; sourceTree = "<group>"; };
@@ -211,6 +215,8 @@
 				F56977321F2B712E00DCFD7B /* Appliable.swift */,
 				F5E8721A1F2DBDAB00EB60AA /* GlobalEventMonitor.swift */,
 				F5A8315C1F31B6D40027D24F /* String.swift */,
+				F5C906FD2041A62000FF6796 /* Collection.swift */,
+				F5C906FF2041A6EA00FF6796 /* Bool.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -423,8 +429,10 @@
 				F5E3BC851F29EE1B007E5AD6 /* Link.swift in Sources */,
 				F5A8315B1F31B5C50027D24F /* Link+RSSFeed.swift in Sources */,
 				F569772E1F2B681B00DCFD7B /* Author.swift in Sources */,
+				F5C906FE2041A62000FF6796 /* Collection.swift in Sources */,
 				F56977301F2B69B800DCFD7B /* Author+Twitter.swift in Sources */,
 				F51307351F2C994300FB082A /* main.swift in Sources */,
+				F5C907002041A6EA00FF6796 /* Bool.swift in Sources */,
 				F5A831591F31B5190027D24F /* Author+RSSFeed.swift in Sources */,
 				F5E3BC9D1F29F54D007E5AD6 /* TwitterDataSource.swift in Sources */,
 				F5B607C21F3473EC00D137D4 /* FeedType.swift in Sources */,

@@ -13,12 +13,4 @@ enum FeedType {
   case twitter
   case rss
   case atom
-
-  var prefixForIDHashing: String {
-    switch self {
-    case .twitter: return "twitter_"
-    case .rss: return "rss_"
-    case .atom: return "atom_"
-    }
-  }
 }
